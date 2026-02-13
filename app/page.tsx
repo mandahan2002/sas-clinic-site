@@ -57,39 +57,51 @@ export default function Home() {
               すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応しています。症状や医師の判断により、対面診療をご案内する場合があります（必要に応じて当院での対応、または適切な医療機関をご案内します）。
             </p>
 
-            <ul className="mt-6 space-y-2 text-sm text-slate-600 text-left max-w-md mx-auto">
-              <li className="flex gap-2">
-                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                状態が安定している方は、3ヶ月ごとの定期フォローにも対応
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                オンライン中心で通院負担を軽減
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                システム管理料などの追加費用は原則不要
-              </li>
-            </ul>
-
-            <ul className="mt-8 space-y-2 text-sm text-slate-700 text-left max-w-md mx-auto">
-              <li className="flex gap-2">
-                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                CPAP継続フォロー中心
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                現在CPAPをご使用中の方の転院にも対応
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                各種CPAP機器対応（BMC含む）
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                機器会社様との連携にも配慮し、継続使用を重視
-              </li>
-            </ul>
+            <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
+              <div className="rounded-xl border border-slate-100 bg-white/70 p-5">
+                <div className="text-sm font-semibold text-slate-900">診療スタイル</div>
+                <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                  <li className="flex gap-2">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                    状態が安定している方は、3ヶ月ごとの定期フォローにも対応
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                    オンライン中心で通院負担を軽減
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                    システム管理料などの追加費用は原則不要
+                  </li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-slate-100 bg-white/70 p-5">
+                <div className="text-sm font-semibold text-slate-900">対象患者</div>
+                <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                  <li className="flex gap-2">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                    CPAP継続フォロー中心
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                    現在CPAPをご使用中の方の転院にも対応
+                  </li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-slate-100 bg-white/70 p-5">
+                <div className="text-sm font-semibold text-slate-900">機器対応</div>
+                <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                  <li className="flex gap-2">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                    各種CPAP機器対応
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                    機器会社様との連携にも配慮し、継続使用を重視
+                  </li>
+                </ul>
+              </div>
+            </div>
 
             <div className="mt-10">
               <a
@@ -165,7 +177,7 @@ export default function Home() {
           <div className="mt-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
             <div className="text-sm font-semibold text-[#0B1F3A] mb-3">機材について</div>
             <div className="space-y-2 text-sm text-slate-700">
-              <p>各種CPAP機器に対応（BMC含む）</p>
+              <p>各種CPAP機器に対応</p>
               <p>現在ご使用中の機器のまま継続フォロー可能</p>
               <p>機材に関するご相談にも対応</p>
             </div>
