@@ -26,8 +26,11 @@ export default function Home() {
             <a href="#transfer" className="hover:text-[#0B1F3A] transition-colors">
               転院について
             </a>
+            <a href="#fees" className="hover:text-[#0B1F3A] transition-colors">
+              料金・保険
+            </a>
             <a href="#access" className="hover:text-[#0B1F3A] transition-colors">
-              医療機関情報
+              クリニックについて
             </a>
           </nav>
           <a
@@ -347,7 +350,7 @@ export default function Home() {
                 href="#access"
                 className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-center text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50 transition-colors"
               >
-                医療機関情報を見る
+                クリニックの情報を見る
               </a>
             </div>
           </div>
@@ -384,7 +387,7 @@ export default function Home() {
       {/* Access / Legal */}
       <section id="access" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">医療機関情報</h2>
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">クリニックについて</h2>
           <p className="mt-2 text-sm text-slate-700">
             医療広告上の基本情報を明示します（地図・内観写真の掲載は任意です）。
           </p>
