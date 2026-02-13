@@ -47,14 +47,14 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
-              オンライン中心のCPAP継続フォロー外来
-              <span className="block mt-2">通院不要・転院OK</span>
+              通院が難しい安定期のCPAPユーザーへ
+              <span className="block mt-2">オンライン中心の定期フォロー外来</span>
             </h1>
             <p className="mt-4 text-sm text-slate-600">
-              首都圏からのオンライン転院相談多数
+              すでにCPAP治療を継続中の方へ（安定期の定期フォロー）
             </p>
             <p className="mt-2 text-sm text-slate-600">
-              全国のCPAP患者様に対応（必要時は地域医療機関への受診をご案内）
+              すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応しています。症状や医師の判断により、対面診療をご案内する場合があります（必要に応じて当院での対応、または適切な医療機関をご案内します）。
             </p>
 
             <ul className="mt-8 space-y-2 text-sm text-slate-700 text-left max-w-md mx-auto">
@@ -248,7 +248,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-[#0B1F3A]">診療日・体制</h2>
           <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
             <div className="text-sm font-semibold text-[#0B1F3A] mb-3">定期フォロー枠</div>
-            <p className="text-sm text-slate-700">火曜・金曜（完全予約制）</p>
+            <p className="text-sm text-slate-700">水曜・土曜（完全予約制）</p>
             <p className="mt-3 text-sm text-slate-700">継続患者様のご相談はオンライン診察にて対応</p>
           </div>
         </div>
