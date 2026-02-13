@@ -105,7 +105,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href="#reserve"
+                href="#eligibility"
                 className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
               >
                 CPAP継続フォロー・転院相談（診療予約）
@@ -121,6 +121,56 @@ export default function Home() {
               ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Eligibility */}
+      <section id="eligibility" className="mx-auto max-w-5xl px-6 py-14">
+        <h2 className="text-2xl font-bold text-[#0B1F3A]">受診対象の確認（目安）</h2>
+        <p className="mt-3 text-sm text-slate-700">
+          当院は「安定期のCPAP継続フォロー」を中心としています。迷う場合は予約枠で医師にご相談ください。
+        </p>
+        <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+          <div className="text-sm font-semibold text-[#0B1F3A]">チェック項目</div>
+          <ul className="mt-3 space-y-2 text-sm text-slate-700">
+            <li className="flex gap-2">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+              <span>すでにCPAP治療を継続している</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+              <span>状態が安定している（急な悪化や強い症状がない）</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+              <span>3ヶ月ごとの定期フォローを希望している</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+              <span>緊急性の高い症状がない</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+              <span>オンライン診療が可能（ビデオ通話・本人確認等）</span>
+            </li>
+          </ul>
+          <p className="mt-4 text-xs text-slate-500">
+            緊急性が疑われる場合は、速やかに対面受診または救急をご検討ください。
+          </p>
+        </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="#reserve"
+            className="rounded-xl bg-[#0B1F3A] px-6 py-3 text-center text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
+          >
+            診療予約へ
+          </a>
+          <a
+            href="#faq"
+            className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-center text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50 transition-colors"
+          >
+            よくある質問を見る
+          </a>
         </div>
       </section>
 
