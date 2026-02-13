@@ -103,17 +103,23 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#reserve"
                 className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
               >
                 CPAP継続フォロー・転院相談（診療予約）
               </a>
-              <p className="mt-3 text-xs text-slate-500">
-                ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
-              </p>
+              <a
+                href="#services"
+                className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-center text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50 transition-colors"
+              >
+                対象か確認する（受診可否の相談）
+              </a>
             </div>
+            <p className="mt-3 text-xs text-slate-500">
+              ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
+            </p>
           </div>
         </div>
       </section>
