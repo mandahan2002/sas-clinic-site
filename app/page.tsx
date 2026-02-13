@@ -174,8 +174,8 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="border-t border-slate-100 bg-slate-50/50">
-        <div className="mx-auto max-w-5xl px-6 py-14 scroll-mt-24">
+      <section id="services" className="border-t border-slate-100 bg-slate-50/50 scroll-mt-24">
+        <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">診療内容</h2>
           <p className="mt-2 text-sm text-slate-700">
             主軸はSAS・CPAPの継続管理です。耳鼻科領域（花粉症・舌下免疫など）はサブとして相談対応します。
@@ -220,7 +220,7 @@ export default function Home() {
       </section>
 
       {/* Flow */}
-      <section id="flow" className="border-t border-slate-100 bg-white">
+      <section id="flow" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">診療フロー</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -242,7 +242,7 @@ export default function Home() {
       </section>
 
       {/* Transfer */}
-      <section id="transfer" className="border-t border-slate-100 bg-slate-50/50">
+      <section id="transfer" className="border-t border-slate-100 bg-slate-50/50 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">現在CPAPをご使用中の方へ（転院対応）</h2>
           <div className="mt-6 space-y-3">
@@ -316,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* Reserve */}
-      <section id="reserve" className="border-t border-slate-100 bg-slate-50/50">
+      <section id="reserve" className="border-t border-slate-100 bg-slate-50/50 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-[#0B1F3A]">予約</h2>
@@ -369,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* Access / Legal */}
-      <section id="access" className="border-t border-slate-100 bg-white">
+      <section id="access" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">医療機関情報</h2>
           <p className="mt-2 text-sm text-slate-700">
