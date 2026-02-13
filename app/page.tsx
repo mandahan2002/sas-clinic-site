@@ -50,6 +50,9 @@ export default function Home() {
               通院が難しい安定期のCPAPユーザーへ
               <span className="block mt-2">オンライン中心の定期フォロー外来</span>
             </h1>
+            <p className="mt-4 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
+              CPAP継続フォロー中心
+            </p>
             <p className="mt-4 text-sm text-slate-600">
               すでにCPAP治療を継続中の方へ（安定期の定期フォロー）
             </p>
@@ -78,10 +81,6 @@ export default function Home() {
               <div className="rounded-xl border border-slate-100 bg-white/70 p-5">
                 <div className="text-sm font-semibold text-slate-900">対象患者</div>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    CPAP継続フォロー中心
-                  </li>
                   <li className="flex gap-2">
                     <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
                     現在CPAPをご使用中の方の転院にも対応
