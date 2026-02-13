@@ -125,29 +125,6 @@ export default function Home() {
       </section>
 
       <section
-        id="prepare"
-        className="mx-auto max-w-5xl px-6 py-14"
-      >
-        <div className="rounded-xl border border-slate-200 bg-white/70 p-6 shadow-sm">
-          <h2 className="text-base font-semibold text-[#0B1F3A]">
-            予約前のご準備（任意）
-          </h2>
-          <p className="mt-3 text-sm text-slate-700">
-            これまでの検査結果や診療情報をお持ちの方は、予約時にアップロードいただくとスムーズです。初回受診時にすべて揃っている必要はありません。
-          </p>
-          <ul className="mt-4 space-y-1.5 list-disc pl-5 text-sm text-slate-700">
-            <li>睡眠検査結果（PSG・簡易検査など）</li>
-            <li>現在使用中のCPAP機器情報</li>
-            <li>直近の診療内容や設定変更の記録</li>
-            <li>紹介状（お持ちの場合）</li>
-          </ul>
-          <p className="mt-4 text-xs text-slate-500">
-            紹介状がなくても受診可能ですが、情報があると診療がスムーズです。
-          </p>
-        </div>
-      </section>
-
-      <section
         id="eligibility"
         className="mx-auto max-w-5xl px-6 py-14 scroll-mt-24"
       >
@@ -289,6 +266,20 @@ export default function Home() {
               <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
               <span>機器会社様との連携にも配慮し、継続使用を重視</span>
             </div>
+          </div>
+          <div className="mt-6 rounded-xl border border-slate-200 bg-white/70 p-5 shadow-sm">
+            <div className="text-sm font-semibold text-slate-900">
+              予約前のご準備（任意）
+            </div>
+            <ul className="mt-3 space-y-1.5 list-disc pl-5 text-sm text-slate-700">
+              <li>睡眠検査結果（PSG・簡易検査など）</li>
+              <li>現在使用中のCPAP機器情報</li>
+              <li>直近の診療内容や設定変更の記録</li>
+              <li>紹介状（お持ちの場合）</li>
+            </ul>
+            <p className="mt-3 text-xs text-slate-500">
+              紹介状がなくても受診可能ですが、情報があると診療がスムーズです。
+            </p>
           </div>
           <div className="mt-8">
             <a
