@@ -175,7 +175,7 @@ export default function Home() {
 
       {/* Services */}
       <section id="services" className="border-t border-slate-100 bg-slate-50/50">
-        <div className="mx-auto max-w-5xl px-6 py-14">
+        <div className="mx-auto max-w-5xl px-6 py-14 scroll-mt-24">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">診療内容</h2>
           <p className="mt-2 text-sm text-slate-700">
             主軸はSAS・CPAPの継続管理です。耳鼻科領域（花粉症・舌下免疫など）はサブとして相談対応します。
