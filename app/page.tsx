@@ -124,7 +124,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="eligibility" className="mx-auto max-w-5xl px-6 py-14">
+      <section
+        id="eligibility"
+        className="mx-auto max-w-5xl px-6 py-14 scroll-mt-24"
+      >
         <h2 className="text-2xl font-bold text-[#0B1F3A]">受診対象の確認（目安）</h2>
         <p className="mt-3 text-sm text-slate-700">
           当院は「安定期のCPAP継続フォロー」を中心としています。迷う場合は予約枠で医師にご相談ください。
