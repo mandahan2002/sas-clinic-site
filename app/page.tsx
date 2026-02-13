@@ -57,6 +57,21 @@ export default function Home() {
               すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応しています。症状や医師の判断により、対面診療をご案内する場合があります（必要に応じて当院での対応、または適切な医療機関をご案内します）。
             </p>
 
+            <ul className="mt-6 space-y-2 text-sm text-slate-600 text-left max-w-md mx-auto">
+              <li className="flex gap-2">
+                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                状態が安定している方は、3ヶ月ごとの定期フォローにも対応
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                オンライン中心で通院負担を軽減
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
+                システム管理料などの追加費用は原則不要
+              </li>
+            </ul>
+
             <ul className="mt-8 space-y-2 text-sm text-slate-700 text-left max-w-md mx-auto">
               <li className="flex gap-2">
                 <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
