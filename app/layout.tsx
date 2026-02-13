@@ -10,9 +10,9 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "SAS・CPAPオンラインクリニック | sas-cpap.jp",
+  title: "SAS CPAP オンラインクリニック | sas-cpap.jp",
   description:
-    "睡眠時無呼吸症候群（SAS）・CPAP管理を中心としたオンライン診療。通院負担を減らし、継続しやすいフォローを提供します。",
+    "オンライン中心のCPAP継続フォロー外来。通院不要・転院OK。首都圏からのオンライン転院相談多数。全国のCPAP患者様に対応。",
 };
 
 export default function RootLayout({
