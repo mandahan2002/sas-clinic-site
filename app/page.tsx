@@ -51,11 +51,12 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:items-start">
             <div className="text-center max-w-3xl mx-auto md:max-w-none md:mx-0">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
-              通院が難しい安定期のCPAPユーザーへ
+              <span className="block">通院が難しい</span>
+              <span className="block">CPAP治療を継続中の方へ</span>
               <span className="block mt-2">オンライン中心の</span>
               <span className="block">定期フォロー外来</span>
             </h1>
-            <p className="mt-4 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
+            <p className="mt-3 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
               CPAP継続フォロー中心
             </p>
             <p className="mt-4 text-sm text-slate-600">
@@ -65,8 +66,8 @@ export default function Home() {
               すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応しています。症状や医師の判断により、対面診療をご案内する場合があります（必要に応じて当院での対応、または適切な医療機関をご案内します）。
             </p>
 
-            <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
-              <div className="rounded-xl border border-slate-100 bg-white/70 p-5">
+            <div className="mt-8 grid gap-4 text-left md:grid-cols-3 md:items-stretch">
+              <div className="rounded-xl border border-slate-100 bg-white/70 p-5 h-full">
                 <div className="text-sm font-semibold text-slate-900">診療スタイル</div>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
                   <li className="flex gap-2">
@@ -83,7 +84,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl border border-slate-100 bg-white/70 p-5">
+              <div className="rounded-xl border border-slate-100 bg-white/70 p-5 h-full">
                 <div className="text-sm font-semibold text-slate-900">対象患者</div>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
                   <li className="flex gap-2">
@@ -92,7 +93,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl border border-slate-100 bg-white/70 p-5">
+              <div className="rounded-xl border border-slate-100 bg-white/70 p-5 h-full">
                 <div className="text-sm font-semibold text-slate-900">機器対応</div>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
                   <li className="flex gap-2">
@@ -127,7 +128,7 @@ export default function Home() {
             </div>
             <div className="space-y-4 flex flex-col">
               <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-5">
-                <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ。</div>
+                <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
                 </p>
