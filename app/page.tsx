@@ -80,7 +80,10 @@ export default function Home() {
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    システム管理料などの追加費用は原則不要
+                    <span className="block">
+                      システム管理料などの追加費用は原則不要
+                      <span className="block text-xs text-slate-500 mt-0.5">※発生する場合は事前に明示します</span>
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -342,7 +345,8 @@ export default function Home() {
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
               <div className="text-sm font-semibold text-[#0B1F3A]">システム利用料など</div>
               <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                プラットフォーム利用料等が発生する場合があります（発生する場合は事前に明示します）。
+                当院ではシステム利用料等の追加費用は原則いただいていません。
+                <span className="block text-xs text-slate-500 mt-1">※発生する場合は事前に明示します。</span>
               </p>
             </div>
           </div>
