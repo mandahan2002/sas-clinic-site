@@ -426,10 +426,10 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">お問い合わせ（事務連絡）</h2>
           <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <p className="text-sm text-slate-700 mb-3">
+            <p className="text-xs text-slate-500 mb-3">
               ※診療内容に関するご相談はオンライン診察にて承っております。
             </p>
-            <p className="text-sm text-slate-700">
+            <p className="text-xs text-slate-500">
               ※機器会社様からのご連絡にも対応しております。
             </p>
           </div>
