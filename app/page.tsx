@@ -37,7 +37,7 @@ export default function Home() {
             href="#reserve"
             className="rounded-xl bg-[#0B1F3A] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0a2847] transition-colors"
           >
-            CPAP継続フォロー・転院相談（診療予約）
+            オンライン診療を予約
           </a>
         </div>
       </header>
