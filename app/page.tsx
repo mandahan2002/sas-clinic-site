@@ -143,6 +143,12 @@ export default function Home() {
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
                 </p>
               </div>
+              <a
+                href="#eligibility"
+                className="inline-flex items-center text-sm font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700"
+              >
+                受診対象か確認する
+              </a>
             </div>
           </div>
         </div>
