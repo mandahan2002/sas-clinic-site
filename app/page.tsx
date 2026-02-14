@@ -59,10 +59,10 @@ export default function Home() {
             <p className="mt-3 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
               CPAP継続フォロー中心
             </p>
-            <p className="mt-4 text-sm text-slate-600">
+            <p className="mt-4 text-sm text-slate-700 leading-relaxed">
               すでにCPAP治療を継続中の方へ（状態に応じた定期フォロー）
             </p>
-            <p className="mt-2 text-sm text-slate-600">
+            <p className="mt-2 text-sm text-slate-700 leading-relaxed">
               すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応しています。症状や医師の判断により、対面診療をご案内する場合があります（必要に応じて当院での対応、または適切な医療機関をご案内します）。
             </p>
 
@@ -133,19 +133,19 @@ export default function Home() {
             </p>
             </div>
             <div className="space-y-4 flex flex-col">
-              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-4 shadow">
+              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
                 </p>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-4 shadow">
+              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   オンライン診療を中心に、継続使用を重視した診療を行っています。
                 </p>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-4 shadow">
+              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
@@ -384,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* Reserve */}
-      <section id="reserve" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
+      <section id="reserve" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-[#0B1F3A]">予約</h2>
@@ -485,7 +485,7 @@ export default function Home() {
       </section>
 
       {/* SAS General Info */}
-      <section className="border-t border-slate-100 bg-white">
+      <section className="border-t border-slate-100 bg-[#F4F7FA]">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">SAS（睡眠時無呼吸症候群）について</h2>
           <div className="mt-6 space-y-6 text-sm text-slate-700">
