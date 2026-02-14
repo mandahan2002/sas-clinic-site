@@ -349,6 +349,16 @@ export default function Home() {
                 <span className="block text-xs text-slate-500 mt-1">※発生する場合は事前に明示します。</span>
               </p>
             </div>
+            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm md:col-span-2">
+              <div className="text-sm font-semibold text-[#0B1F3A]">月額換算の目安（3か月に1回受診した場合）</div>
+              <div className="mt-2 space-y-1 text-sm leading-relaxed text-slate-700">
+                <p>3か月分の自己負担：◯◯〜◯◯円（目安）</p>
+                <p>月額換算：◯◯〜◯◯円/月（目安）</p>
+              </div>
+              <p className="mt-3 text-xs text-slate-500">
+                ※自己負担割合（1割/2割/3割）、診療内容、算定可否（オンライン診療料等）により変動します。詳細は予約時または診療時にご案内します。
+              </p>
+            </div>
           </div>
         </div>
       </section>
