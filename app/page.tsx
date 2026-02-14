@@ -133,19 +133,19 @@ export default function Home() {
             </p>
             </div>
             <div className="space-y-4 flex flex-col">
-              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-4">
+              <div className="flex-1 rounded-xl border border-slate-200 bg-white/80 backdrop-blur-sm p-4">
                 <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
                 </p>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-4">
+              <div className="flex-1 rounded-xl border border-slate-200 bg-white/80 backdrop-blur-sm p-4">
                 <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   オンライン診療を中心に、継続使用を重視した診療を行っています。
                 </p>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-4">
+              <div className="flex-1 rounded-xl border border-slate-200 bg-white/80 backdrop-blur-sm p-4">
                 <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
@@ -212,7 +212,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="border-t border-slate-100 bg-slate-50/50 scroll-mt-24">
+      <section id="services" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">診療内容</h2>
           <p className="mt-2 text-sm text-slate-700">
@@ -280,7 +280,7 @@ export default function Home() {
       </section>
 
       {/* Transfer */}
-      <section id="transfer" className="border-t border-slate-100 bg-slate-50/50 scroll-mt-24">
+      <section id="transfer" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">現在CPAPをご使用中の方へ（転院対応）</h2>
           <div className="mt-6 space-y-3">
@@ -372,7 +372,7 @@ export default function Home() {
       </section>
 
       {/* Schedule */}
-      <section className="border-t border-slate-100 bg-slate-50/50">
+      <section className="border-t border-slate-100 bg-[#F4F7FA]">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">診療日・体制</h2>
           <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
@@ -384,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* Reserve */}
-      <section id="reserve" className="border-t border-slate-100 bg-slate-50/50 scroll-mt-24">
+      <section id="reserve" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-[#0B1F3A]">予約</h2>
@@ -422,7 +422,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section className="border-t border-slate-100 bg-slate-50/50">
+      <section className="border-t border-slate-100 bg-[#F4F7FA]">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">お問い合わせ（事務連絡）</h2>
           <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
@@ -512,7 +512,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="border-t border-slate-100 bg-slate-50/50">
+      <section className="border-t border-slate-100 bg-[#F4F7FA]">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm text-center">
             <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAP継続フォロー・転院相談</h2>
