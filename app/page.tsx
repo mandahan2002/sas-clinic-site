@@ -60,7 +60,7 @@ export default function Home() {
               CPAP継続フォロー中心
             </p>
             <p className="mt-4 text-sm text-slate-600">
-              すでにCPAP治療を継続中の方へ（安定期の定期フォロー）
+              すでにCPAP治療を継続中の方へ（状態に応じた定期フォロー）
             </p>
             <p className="mt-2 text-sm text-slate-600">
               すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応しています。症状や医師の判断により、対面診療をご案内する場合があります（必要に応じて当院での対応、または適切な医療機関をご案内します）。
@@ -134,7 +134,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-5">
-                <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります。</div>
+                <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   オンライン診療を中心に、継続使用を重視した診療を行っています。
                 </p>
@@ -147,7 +147,7 @@ export default function Home() {
               </div>
               <a
                 href="#eligibility"
-                className="inline-flex items-center text-sm font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700"
+                className="mt-2 inline-flex items-center text-sm font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700"
               >
                 受診対象か確認する
               </a>
@@ -162,7 +162,7 @@ export default function Home() {
       >
         <h2 className="text-2xl font-bold text-[#0B1F3A]">受診対象の確認（目安）</h2>
         <p className="mt-3 text-sm text-slate-700">
-          当院は「安定期のCPAP継続フォロー」を中心としています。迷う場合は予約枠で医師にご相談ください。
+          当院は「安定期のCPAP継続フォロー」を中心としています。迷う場合は、オンライン診療で医師にご相談ください。
         </p>
         <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-slate-700">
           <li>すでにCPAP治療を継続している</li>
@@ -280,7 +280,7 @@ export default function Home() {
           <div className="mt-6 space-y-3">
             <div className="flex gap-2 text-sm text-slate-700">
               <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-              <span>紹介状がなくても受診可能ですが、これまでの検査結果や診療情報をご用意いただくとスムーズです。</span>
+              <span>紹介状がなくてもご相談いただける場合があります。これまでの検査結果や診療情報をご用意いただくとスムーズです。</span>
             </div>
             <div className="flex gap-2 text-sm text-slate-700">
               <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
@@ -310,7 +310,7 @@ export default function Home() {
               <li>紹介状（お持ちの場合）</li>
             </ul>
             <p className="mt-3 text-xs text-slate-500">
-              紹介状がなくても受診可能ですが、情報があると診療がスムーズです。
+              紹介状がなくてもご相談いただける場合があります。情報があると診療がスムーズです。
             </p>
           </div>
           <div className="mt-8">
@@ -499,7 +499,7 @@ export default function Home() {
                 href="#reserve"
                 className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
               >
-                CPAP継続フォロー・転院相談（診療予約）
+                オンライン診療予約
               </a>
             </div>
             <p className="mt-4 text-xs text-slate-500">
