@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#171717]">
       {/* Header */}
-      <header className="sticky top-0 z-10 border-b border-slate-200/80 bg-white/95 backdrop-blur-sm">
+      <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-xl bg-[#0B1F3A]" />
@@ -48,7 +48,7 @@ export default function Home() {
         aria-label="メイン"
       >
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:items-start">
+          <div className="grid gap-8 md:grid-cols-[1.3fr_0.7fr] md:gap-12 md:items-start">
             <div className="text-center max-w-3xl mx-auto md:max-w-none md:mx-0">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
               <span className="block">通院が難しい</span>
@@ -128,24 +128,24 @@ export default function Home() {
             <p className="mt-3 text-xs text-slate-500">
               ※現在CPAP治療中の方を主な対象とした継続フォロー外来です。
             </p>
-            <p className="mt-3 text-xs text-slate-500">
+            <p className="mt-1 text-xs text-slate-500">
               ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
             </p>
             </div>
             <div className="space-y-4 flex flex-col">
-              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-5">
+              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-4">
                 <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
                 </p>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-5">
+              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-4">
                 <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   オンライン診療を中心に、継続使用を重視した診療を行っています。
                 </p>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-5">
+              <div className="flex-1 rounded-xl border border-slate-200 bg-white/70 p-4">
                 <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
@@ -333,7 +333,7 @@ export default function Home() {
       {/* Fees */}
       <section id="fees" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">料金・保険</h2>
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">料金・お支払い</h2>
           <p className="mt-2 text-sm text-slate-700">
             料金は保険診療の範囲・診療内容により異なります。詳細は予約時または診療時にご案内します。
           </p>
