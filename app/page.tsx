@@ -167,7 +167,7 @@ export default function Home() {
         className="mx-auto max-w-5xl px-6 py-14 scroll-mt-24"
       >
         <h2 className="text-2xl font-bold text-[#0B1F3A]">受診対象の確認（目安）</h2>
-        <p className="mt-3 text-sm text-slate-700">
+        <p className="mt-2 text-sm text-slate-700">
           当院は「安定期のCPAP継続フォロー」を中心としています。迷う場合は、オンライン診療で医師にご相談ください。
         </p>
         <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-slate-700">
@@ -516,7 +516,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm text-center">
             <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAP継続フォロー・転院相談</h2>
-            <p className="mt-3 text-sm text-slate-700">
+            <p className="mt-2 text-sm text-slate-700">
               オンライン中心の診療で、通院負担を減らしながら継続フォローを行います
             </p>
             <div className="mt-8">
