@@ -17,14 +17,14 @@ export default function Home() {
             </div>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
+            <a href="#transfer" className="hover:text-[#0B1F3A] transition-colors">
+              転院について
+            </a>
             <a href="#services" className="hover:text-[#0B1F3A] transition-colors">
               診療内容
             </a>
             <a href="#flow" className="hover:text-[#0B1F3A] transition-colors">
               診療の流れ
-            </a>
-            <a href="#transfer" className="hover:text-[#0B1F3A] transition-colors">
-              転院について
             </a>
             <a href="#fees" className="hover:text-[#0B1F3A] transition-colors">
               料金・保険
@@ -295,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* Fees */}
-      <section id="fees" className="border-t border-slate-100 bg-white">
+      <section id="fees" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">料金・保険</h2>
           <p className="mt-2 text-sm text-slate-700">
