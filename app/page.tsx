@@ -337,12 +337,6 @@ export default function Home() {
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">保険診療について</div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                オンライン診療・対面診療いずれも、適用条件や算定可否は症状・診療内容により異なります。
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
               <div className="text-sm font-semibold text-[#0B1F3A]">システム利用料など</div>
               <p className="mt-2 text-sm leading-relaxed text-slate-700">
                 当院ではシステム利用料等の追加費用は原則いただいていません。
@@ -350,6 +344,15 @@ export default function Home() {
               </p>
               <p className="mt-2 text-sm text-slate-700">
                 お支払いはクレジットカードなどのオンライン決済に対応しています（詳細は予約時にご案内します）。
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+              <div className="text-sm font-semibold text-[#0B1F3A]">保険診療について</div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">
+                オンライン診療・対面診療いずれも、適用条件や算定可否は症状・診療内容により異なります。
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                診療前に費用の目安をご案内し、ご同意のうえで診療を行います。
               </p>
             </div>
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm md:col-span-2">
