@@ -37,7 +37,7 @@ export default function Home() {
             href="#reserve"
             className="rounded-xl bg-[#0B1F3A] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0a2847] transition-colors"
           >
-            オンライン診療を予約
+            オンライン診療予約
           </a>
         </div>
       </header>
@@ -111,7 +111,7 @@ export default function Home() {
                 href="#reserve"
                 className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
               >
-                CPAP継続フォロー・転院相談（診療予約）
+                オンライン診療予約
               </a>
               <a
                 href="#eligibility"
@@ -125,19 +125,19 @@ export default function Home() {
             </p>
             </div>
             <div className="space-y-4">
-              <div className="rounded-xl border bg-white/70 p-5">
+              <div className="rounded-xl border border-slate-200 bg-white/70 p-5">
                 <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ。</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
                 </p>
               </div>
-              <div className="rounded-xl border bg-white/70 p-5">
+              <div className="rounded-xl border border-slate-200 bg-white/70 p-5">
                 <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります。</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   オンライン診療を中心に、継続使用を重視した診療を行っています。
                 </p>
               </div>
-              <div className="rounded-xl border bg-white/70 p-5">
+              <div className="rounded-xl border border-slate-200 bg-white/70 p-5">
                 <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
@@ -177,7 +177,7 @@ export default function Home() {
             href="#reserve"
             className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
           >
-            診療予約へ
+            オンライン診療予約
           </a>
         </div>
       </section>
@@ -316,7 +316,7 @@ export default function Home() {
               href="#reserve"
               className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
             >
-              CPAP継続フォロー・転院相談（診療予約）
+              オンライン診療予約
             </a>
           </div>
         </div>
@@ -372,7 +372,7 @@ export default function Home() {
                 href="#"
                 className="rounded-xl bg-[#0B1F3A] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
               >
-                CPAP継続フォロー・転院相談（診療予約）
+                オンライン診療予約
               </a>
               <a
                 href="#access"
