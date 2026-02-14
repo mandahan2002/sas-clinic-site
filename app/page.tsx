@@ -48,7 +48,8 @@ export default function Home() {
         aria-label="メイン"
       >
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 md:gap-12 md:items-start">
+            <div className="text-center max-w-3xl mx-auto md:max-w-none md:mx-0">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
               通院が難しい安定期のCPAPユーザーへ
               <span className="block mt-2">オンライン中心の定期フォロー外来</span>
@@ -122,6 +123,27 @@ export default function Home() {
             <p className="mt-3 text-xs text-slate-500">
               ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
             </p>
+            </div>
+            <div className="space-y-4">
+              <div className="rounded-xl border bg-white/70 p-5">
+                <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ。</div>
+                <p className="mt-1 text-sm text-slate-700 leading-relaxed">
+                  状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
+                </p>
+              </div>
+              <div className="rounded-xl border bg-white/70 p-5">
+                <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります。</div>
+                <p className="mt-1 text-sm text-slate-700 leading-relaxed">
+                  オンライン診療を中心に、継続使用を重視した診療を行っています。
+                </p>
+              </div>
+              <div className="rounded-xl border bg-white/70 p-5">
+                <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
+                <p className="mt-1 text-sm text-slate-700 leading-relaxed">
+                  通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
