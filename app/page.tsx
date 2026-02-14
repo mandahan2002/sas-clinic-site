@@ -52,7 +52,8 @@ export default function Home() {
             <div className="text-center max-w-3xl mx-auto md:max-w-none md:mx-0">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
               通院が難しい安定期のCPAPユーザーへ
-              <span className="block mt-2">オンライン中心の定期フォロー外来</span>
+              <span className="block mt-2">オンライン中心の</span>
+              <span className="block">定期フォロー外来</span>
             </h1>
             <p className="mt-4 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
               CPAP継続フォロー中心
