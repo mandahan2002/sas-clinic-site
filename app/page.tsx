@@ -48,7 +48,7 @@ export default function Home() {
         aria-label="メイン"
       >
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12 md:items-start">
+          <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:items-start">
             <div className="text-center max-w-3xl mx-auto md:max-w-none md:mx-0">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
               通院が難しい安定期のCPAPユーザーへ
