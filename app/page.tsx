@@ -348,6 +348,9 @@ export default function Home() {
                 当院ではシステム利用料等の追加費用は原則いただいていません。
                 <span className="block text-xs text-slate-500 mt-1">※発生する場合は事前に明示します。</span>
               </p>
+              <p className="mt-2 text-sm text-slate-700">
+                お支払いはクレジットカードなどのオンライン決済に対応しています（詳細は予約時にご案内します）。
+              </p>
             </div>
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm md:col-span-2">
               <div className="text-sm font-semibold text-[#0B1F3A]">月額換算の目安（3か月に1回受診した場合）</div>
@@ -441,10 +444,10 @@ export default function Home() {
               <div className="mt-1 text-slate-700">SAS CPAP オンラインクリニック</div>
 
               <div className="mt-4 font-semibold text-slate-900">管理者（医師）</div>
-              <div className="mt-1 text-slate-700">（ここに医師名を記載）</div>
+              <div className="mt-1 text-slate-700">廣瀬　有紀子</div>
 
               <div className="mt-4 font-semibold text-slate-900">所在地</div>
-              <div className="mt-1 text-slate-700">（ここに住所を記載）</div>
+              <div className="mt-1 text-slate-700">東京都渋谷区代々木2丁目23-1-1226</div>
 
               <div className="mt-4 font-semibold text-slate-900">連絡先</div>
               <div className="mt-1 text-sm text-slate-700">
