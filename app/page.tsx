@@ -126,6 +126,9 @@ export default function Home() {
               </a>
             </div>
             <p className="mt-3 text-xs text-slate-500">
+              ※現在CPAP治療中の方を主な対象とした継続フォロー外来です。
+            </p>
+            <p className="mt-3 text-xs text-slate-500">
               ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
             </p>
             </div>
