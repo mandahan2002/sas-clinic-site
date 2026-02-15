@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#171717]">
@@ -44,10 +46,11 @@ export default function Home() {
 
       {/* Hero */}
       <section
-        className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-50/80"
+        className="relative overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-white to-[#F1F5F9]"
         aria-label="メイン"
       >
-        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-5xl px-6 py-20 md:py-24
+">
           <div className="grid gap-8 md:grid-cols-[1.3fr_0.7fr] md:gap-12 md:items-start">
             <div className="text-center max-w-3xl mx-auto md:max-w-none md:mx-0">
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
@@ -446,11 +449,26 @@ export default function Home() {
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-100 bg-white p-6 text-sm shadow-sm">
+              <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Image
+                  src="/doctor.png"
+                  alt="管理者（医師）の写真"
+                  width={112}
+                  height={112}
+                  className="rounded-2xl object-cover shadow-sm"
+                />
+                <div>
+                  <div className="text-sm font-semibold text-slate-900">管理者（医師）</div>
+                  <div className="mt-1 text-base font-semibold text-slate-900">廣瀬 有紀子</div>
+                  <ul className="mt-2 space-y-1 text-sm text-slate-700">
+                    <li>・耳鼻咽喉科専門医</li>
+                    <li>・アレルギー科専門医</li>
+                  </ul>
+                </div>
+              </div>
+
               <div className="font-semibold text-slate-900">医療機関名</div>
               <div className="mt-1 text-slate-700">SAS CPAP オンラインクリニック</div>
-
-              <div className="mt-4 font-semibold text-slate-900">管理者（医師）</div>
-              <div className="mt-1 text-slate-700">廣瀬　有紀子</div>
 
               <div className="mt-4 font-semibold text-slate-900">所在地</div>
               <div className="mt-1 text-slate-700">東京都渋谷区代々木2丁目23-1-1226</div>
@@ -533,6 +551,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+<footer className="mt-16 border-t border-slate-200/70 pt-8 text-xs text-slate-500">
+  <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
+    <div>© {new Date().getFullYear()} SAS CPAP オンラインクリニック</div>
+    <a
+      href="/partners"
+      className="underline underline-offset-4 hover:text-slate-700"
+    >
+      機器代理店の方へ
+    </a>
+  </div>
+</footer>
+
     </main>
   );
 }
