@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-[#171717]">
+    <main className="min-h-screen bg-white text-[#171717] pb-20 md:pb-0">
       {/* Header */}
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-5xl items-start justify-between px-6 py-4">
@@ -45,7 +45,7 @@ export default function Home() {
             href="#reserve"
             className="rounded-xl bg-[#0B1F3A] px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#0a2847] transition-colors"
           >
-            予約
+            継続フォローの予約はこちら
           </a>
         </div>
       </header>
@@ -72,14 +72,8 @@ export default function Home() {
               <li>✓ 通院負担を減らしたい方</li>
             </ul>
 
-            <p className="mt-6 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
-              CPAP継続フォロー中心
-            </p>
             <p className="mt-4 text-sm text-slate-700 leading-relaxed">
-              すでにCPAP治療を継続中の方へ（状態に応じた定期フォロー）
-            </p>
-            <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-              すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応しています。症状や医師の判断により、対面診療をご案内する場合があります（必要に応じて当院での対応、または適切な医療機関をご案内します）。
+              すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応し、現在の機器のままご相談いただけます（医師の判断により、対面診療をご案内する場合があります）。
             </p>
 
             <div className="mt-8 grid gap-4 text-left md:grid-cols-3 md:items-stretch">
@@ -141,7 +135,12 @@ export default function Home() {
                 対象か確認する（受診可否の相談）
               </a>
             </div>
-            <p className="mt-3 text-xs text-slate-500">
+            <div className="mt-3 flex flex-wrap gap-4 text-xs text-slate-600">
+              <span className="flex items-center gap-1">✓ 通院不要</span>
+              <span className="flex items-center gap-1">✓ 所要時間：約10分</span>
+              <span className="flex items-center gap-1">✓ 現在のCPAP機器のまま相談可能</span>
+            </div>
+            <p className="mt-4 text-xs text-slate-500">
               ※現在のCPAP機器のままご相談いただける場合があります
             </p>
             <p className="mt-1 text-xs text-slate-500">
@@ -154,7 +153,28 @@ export default function Home() {
               ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
             </p>
             </div>
-            <div className="space-y-4 flex flex-col">
+            <div className="space-y-5 flex flex-col">
+              {/* Hero image (patient side) */}
+              <div className="rounded-3xl border border-slate-200/70 bg-white shadow-md overflow-hidden">
+                <div className="relative">
+                  <Image
+                    src="/online-patient.png"
+                    alt="オンライン診療の様子（患者側）"
+                    width={1200}
+                    height={800}
+                    className="w-full h-[240px] md:h-[300px] object-cover"
+                    priority
+                  />
+                  <div className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#0B1F3A] shadow">
+                    ✓ 通院不要
+                  </div>
+                </div>
+                <div className="px-4 py-3">
+                  <p className="text-xs text-slate-600">
+                    自宅から、約10分で完結するオンライン診療
+                  </p>
+                </div>
+              </div>
               <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
@@ -183,7 +203,7 @@ export default function Home() {
                 href="#reserve"
                 className="mt-2 inline-flex items-center text-sm font-medium text-[#0B1F3A] underline underline-offset-4 hover:text-[#0a2847]"
               >
-                継続フォローの予約へ
+                継続フォローの予約はこちら
               </a>
             </div>
           </div>
@@ -289,11 +309,32 @@ export default function Home() {
       <section id="flow" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">診療フロー</h2>
+          <div className="mt-6 rounded-3xl overflow-hidden border border-slate-200/70 bg-white shadow-md">
+            <Image
+              src="/online-doctor.png"
+              alt="オンライン診療の様子（医師側）"
+              width={1200}
+              height={700}
+              className="w-full h-[180px] md:h-[220px] object-cover"
+            />
+          </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
-              { n: "1", t: "WEB予約" },
-              { n: "2", t: "オンライン診察（状況確認）" },
-              { n: "3", t: "データ確認・継続フォロー" },
+              {
+                n: "1",
+                t: "WEBで予約（約1分）",
+                d: "空き枠から選ぶだけ。24時間いつでも予約可能です。",
+              },
+              {
+                n: "2",
+                t: "オンライン診察（約10分）",
+                d: "現在のCPAP使用状況やお困りごとを確認します。必要に応じて今後のフォロー方針をご説明します。",
+              },
+              {
+                n: "3",
+                t: "データ確認・継続フォロー",
+                d: "遠隔モニタリングデータを確認し、3か月ごとの定期フォローにも対応します。",
+              },
             ].map((s) => (
               <div
                 key={s.n}
@@ -301,6 +342,25 @@ export default function Home() {
               >
                 <div className="text-xs font-medium text-slate-500">STEP {s.n}</div>
                 <div className="mt-1 text-sm font-semibold text-[#0B1F3A]">{s.t}</div>
+                <div className="mt-3 text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
+                  {s.d}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              "通院不要",
+              "ご自宅から受診可能",
+              "現在のCPAP機器のままご相談可能",
+            ].map((point) => (
+              <div
+                key={point}
+                className="flex items-center gap-2 rounded-xl border border-slate-100 bg-white p-4 shadow-sm"
+              >
+                <span className="text-[#0B1F3A] font-bold">✓</span>
+                <span className="text-sm text-slate-700">{point}</span>
               </div>
             ))}
           </div>
@@ -395,6 +455,64 @@ export default function Home() {
                 ※自己負担割合（1割/2割/3割）、診療内容、算定可否（オンライン診療料等）により変動します。詳細は予約時または診療時にご案内します。
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">よくある質問</h2>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                q: "保険診療ですか？",
+                a: "はい、当院の診療は原則として保険診療となります。受診時には必ず健康保険証（またはマイナ保険証）をご用意ください。",
+              },
+              {
+                q: "紹介状は必要ですか？",
+                a: "紹介状がなくてもご相談いただけます。これまでの検査結果や診療情報をお持ちいただくと、よりスムーズな診療が可能です。",
+              },
+              {
+                q: "今のCPAP機器のまま受診できますか？",
+                a: "はい、多くのメーカーの機器に対応しておりますので、現在の機器を継続してご使用いただける場合がほとんどです。予約時にメーカー名や機種名をお知らせください。",
+              },
+              {
+                q: "支払い方法は？",
+                a: "クレジットカードによるオンライン決済に対応しております。診療完了後、登録いただいたカードから自動的に決済が行われます。",
+              },
+              {
+                q: "診察時間はどれくらいですか？",
+                a: "オンライン診察自体は通常10分程度で終了します。通院や待ち時間の負担なく、効率的に受診いただけます。",
+              },
+            ].map((item, idx) => (
+              <details
+                key={idx}
+                className="group rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-all"
+              >
+                <summary className="flex cursor-pointer items-center justify-between list-none">
+                  <span className="text-sm font-semibold text-[#0B1F3A]">{item.q}</span>
+                  <span className="text-[#0B1F3A] transition-transform group-open:rotate-180">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </summary>
+                <div className="mt-4 text-sm leading-relaxed text-slate-700">
+                  {item.a}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -520,10 +638,6 @@ export default function Home() {
               </ul>
             </div>
           </div>
-
-          <footer className="mt-10 border-t border-slate-100 pt-6 text-xs text-slate-500">
-            © {new Date().getFullYear()} SAS CPAP オンラインクリニック
-          </footer>
         </div>
       </section>
 
@@ -588,6 +702,24 @@ export default function Home() {
     </a>
   </div>
 </footer>
+
+    {/* Mobile Fixed CTA */}
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden">
+      <div className="mx-auto flex max-w-md gap-3">
+        <a
+          href="#reserve"
+          className="flex-1 rounded-xl bg-[#0B1F3A] py-3 text-center text-sm font-semibold text-white shadow-sm"
+        >
+          継続フォローの予約はこちら
+        </a>
+        <a
+          href="#eligibility"
+          className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-[#0B1F3A]"
+        >
+          対象確認
+        </a>
+      </div>
+    </div>
 
     </main>
   );
