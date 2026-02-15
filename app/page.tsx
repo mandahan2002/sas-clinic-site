@@ -698,7 +698,15 @@ export default function Home() {
               <div className="mt-1 text-slate-700">SAS CPAP オンラインクリニック</div>
 
               <div className="mt-4 font-semibold text-slate-900">所在地</div>
-              <div className="mt-1 text-slate-700">東京都渋谷区代々木2丁目23-1-1226</div>
+              <div className="mt-1 text-xs text-slate-500">東京都渋谷区代々木2丁目23-1 ニューステートメナー 1226</div>
+              <p className="mt-1 text-xs text-slate-500">
+                ※オンライン診療を主としているため、通常の来院受付は行っておりません。
+              </p>
+              <p className="mt-2 text-xs text-slate-500">
+                新宿・代々木エリアに拠点を置き、
+                <br />
+                必要に応じて都内医療機関との連携も視野に入れた体制を整えています。
+              </p>
 
               <div className="mt-4 font-semibold text-slate-900">連絡先</div>
               <div className="mt-1 text-sm text-slate-700">
