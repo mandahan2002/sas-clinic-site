@@ -140,6 +140,9 @@ export default function Home() {
                 対象か確認する（受診可否の相談）
               </a>
             </div>
+            <p className="mt-3 text-xs text-slate-500">
+              当院では、患者様の安全性と継続性を重視し、医学的判断に基づいたオンラインフォローを行っています。
+            </p>
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-600">
               <span className="flex items-center gap-1">✓ 医師がデータを確認</span>
               <span className="flex items-center gap-1">✓ 初回1ヶ月フォローあり</span>
@@ -172,7 +175,7 @@ export default function Home() {
                     priority
                   />
                   <div className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#0B1F3A] shadow">
-                    ✓ オンライン中心の診療
+                    ✓ 医師による継続管理
                   </div>
                 </div>
                 <div className="px-4 py-3">
@@ -182,9 +185,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
-                <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
+                <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
-                  状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
+                  通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
                 </p>
               </div>
               <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
@@ -194,9 +197,9 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
-                <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
+                <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
-                  通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
+                  状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
                 </p>
               </div>
               <a
@@ -216,6 +219,10 @@ export default function Home() {
           <p className="mt-8 text-center text-xs text-slate-500">
             初診後約1ヶ月フォロー｜安定後は約3ヶ月ごとの定期診療
           </p>
+          <div className="mt-4 text-center text-xs text-slate-500 leading-relaxed space-y-1">
+            <p>当院では、オンライン診療の利便性と医療安全性のバランスを重視しています。</p>
+            <p>必要に応じて対面医療機関とも連携し、無理のない継続治療を目指します。</p>
+          </div>
         </div>
       </section>
 
@@ -634,7 +641,7 @@ export default function Home() {
       {/* Online Safety */}
       <section className="border-t border-slate-100 bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">全国対応について</h2>
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">オンライン診療対応エリアについて</h2>
           <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
             <p className="text-sm leading-relaxed text-slate-700">
               必要に応じて患者様のお住まいの地域の医療機関への受診をご案内し、安心して治療を継続できる体制を整えています。
@@ -682,6 +689,7 @@ export default function Home() {
                   <ul className="mt-2 space-y-1 text-sm text-slate-700">
                     <li>・耳鼻咽喉科専門医</li>
                     <li>・アレルギー科専門医</li>
+                    <li className="pt-1 text-xs text-slate-500">CPAP治療・耳鼻咽喉科領域を中心にオンライン診療を担当</li>
                   </ul>
                 </div>
               </div>
@@ -769,7 +777,10 @@ export default function Home() {
       
 <footer className="mt-16 border-t border-slate-200/70 pt-8 text-xs text-slate-500">
   <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
-    <div>© {new Date().getFullYear()} SAS CPAP オンラインクリニック</div>
+    <div className="flex flex-col items-center gap-1 sm:items-start">
+      <p className="mb-1">本サイトは医療機関による情報提供を目的としています。</p>
+      <p>© {new Date().getFullYear()} SAS CPAP オンラインクリニック</p>
+    </div>
     <a
       href="/partners"
       className="underline underline-offset-4 hover:text-slate-700"
