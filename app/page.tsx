@@ -136,7 +136,7 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-3 flex flex-wrap gap-4 text-xs text-slate-600">
-              <span className="flex items-center gap-1">✓ 通院不要</span>
+              <span className="flex items-center gap-1">✓ 完全オンライン中心の継続フォロー</span>
               <span className="flex items-center gap-1">✓ 所要時間：約10分</span>
               <span className="flex items-center gap-1">✓ 現在のCPAP機器のまま相談可能</span>
             </div>
@@ -166,7 +166,7 @@ export default function Home() {
                     priority
                   />
                   <div className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#0B1F3A] shadow">
-                    ✓ 通院不要
+                    ✓ オンライン中心の診療
                   </div>
                 </div>
                 <div className="px-4 py-3">
@@ -182,9 +182,9 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
-                <div className="text-sm font-semibold text-slate-900">現在ご使用中のCPAP機器のままご相談いただける場合があります</div>
+                <div className="text-sm font-semibold text-slate-900">機器変更は必須ではありません</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
-                  オンライン診療を中心に、継続使用を重視した診療を行っています。
+                  現在ご使用中のCPAP機器のままご相談いただける場合があります。
                 </p>
               </div>
               <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
@@ -205,6 +205,41 @@ export default function Home() {
               >
                 継続フォローの予約はこちら
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Online Reassurance */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              完全オンラインでも安心して続けられる体制
+            </h2>
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-700 md:text-base">
+              <p>
+                当院では、完全オンライン中心の継続フォロー体制を採用しています。初診後は1ヶ月後にオンライン再診を行い、状態が安定している方は3ヶ月ごとの定期フォローに移行します。
+              </p>
+              <p>
+                医師が遠隔モニタリングデータを確認しながら診療を行い、必要に応じて対面医療機関への受診をご案内するなど、安全性に配慮した診療体制を整えています。
+              </p>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+              {[
+                "現在のCPAP機器のまま相談可能",
+                "初回1ヶ月フォローあり",
+                "安定すれば3ヶ月診療",
+                "医師がデータ確認",
+                "必要時は対面医療へ連携",
+              ].map((text, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center rounded-xl border border-slate-100 bg-slate-50 p-3 text-center text-xs font-semibold text-[#0B1F3A] shadow-sm"
+                >
+                  {text}
+                </div>
+              ))}
             </div>
           </div>
         </div>
