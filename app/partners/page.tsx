@@ -187,7 +187,7 @@ export default function PartnersPage() {
         </section>
   
         {/* How to collaborate */}
-        <section id="how" className={`${sectionBase} bg-[#F4F7FA]`}>
+        <section id="how" className={`${sectionBase} bg-[#F4F7FA] scroll-mt-24 md:scroll-mt-28`}>
           <div className={containerBase}>
             <h2 className="text-2xl font-bold text-[#0B1F3A]">
               連携方法（シンプル運用）

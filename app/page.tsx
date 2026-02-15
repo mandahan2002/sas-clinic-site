@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* Hero */}
       <section
-        className="relative overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-white to-[#F1F5F9]"
+        className="relative overflow-hidden bg-gradient-to-b from-[#F8FAFC] to-white"
         aria-label="メイン"
       >
         <div className="mx-auto max-w-5xl px-6 py-20 md:py-24
@@ -62,8 +62,8 @@ export default function Home() {
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
               <span className="block">通院が難しい</span>
               <span className="block">CPAP治療を継続中の方へ</span>
-              <span className="block mt-4 text-lg font-semibold md:text-2xl">
-                医師が遠隔データを確認する
+              <span className="block mt-4 text-lg md:text-2xl">
+                <span className="font-semibold">医師が遠隔データを確認する</span>
                 <br className="hidden md:inline" /> オンライン中心の継続フォロー外来
               </span>
             </h1>
@@ -79,7 +79,7 @@ export default function Home() {
             </p>
 
             <div className="mt-8 grid gap-4 text-left md:grid-cols-3 md:items-stretch">
-              <div className="rounded-xl border border-slate-100 bg-white/70 p-5 h-full">
+              <div className="rounded-xl border border-slate-200/70 bg-white/70 p-5 h-full">
                 <div className="text-sm font-semibold text-slate-900">診療スタイル</div>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
                   <li className="flex gap-2">
@@ -99,7 +99,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl border border-slate-100 bg-white/70 p-5 h-full">
+              <div className="rounded-xl border border-slate-200/70 bg-white/70 p-5 h-full">
                 <div className="text-sm font-semibold text-slate-900">対象患者</div>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
                   <li className="flex gap-2">
@@ -108,7 +108,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-xl border border-slate-100 bg-white/70 p-5 h-full">
+              <div className="rounded-xl border border-slate-200/70 bg-white/70 p-5 h-full">
                 <div className="text-sm font-semibold text-slate-900">機器対応</div>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
                   <li className="flex gap-2">
@@ -162,7 +162,7 @@ export default function Home() {
               ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
             </p>
             </div>
-            <div className="space-y-5 flex flex-col">
+            <div className="space-y-6 flex flex-col">
               {/* Hero image (patient side) */}
               <div className="rounded-3xl border border-slate-200/70 bg-white shadow-md overflow-hidden">
                 <div className="relative">
@@ -184,7 +184,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
+              <div className="flex-1 rounded-xl border border-slate-200/70 bg-[#FAFBFC] p-5 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
