@@ -162,7 +162,7 @@ export default function Home() {
                     alt="オンライン診療の様子（患者側）"
                     width={1200}
                     height={800}
-                    className="w-full h-[240px] md:h-[300px] object-cover"
+                    className="w-full h-[240px] md:h-[300px] object-[center_30%]"
                     priority
                   />
                   <div className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#0B1F3A] shadow">
@@ -210,34 +210,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Online Reassurance */}
+      {/* Medical Management System */}
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
             <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
-              完全オンラインでも安心して続けられる体制
+              医師による継続管理体制について
             </h2>
-            <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-700 md:text-base">
-              <p>
-                当院では、完全オンライン中心の継続フォロー体制を採用しています。初診後は1ヶ月後にオンライン再診を行い、状態が安定している方は3ヶ月ごとの定期フォローに移行します。
-              </p>
-              <p>
-                医師が遠隔モニタリングデータを確認しながら診療を行い、必要に応じて対面医療機関への受診をご案内するなど、安全性に配慮した診療体制を整えています。
-              </p>
-            </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+              当院では、CPAP治療を継続して安全に続けることを重視し、オンライン中心でも医師による定期的な確認を行っています。
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
               {[
-                "現在のCPAP機器のまま相談可能",
-                "初回1ヶ月フォローあり",
-                "安定すれば3ヶ月診療",
-                "医師がデータ確認",
-                "必要時は対面医療へ連携",
-              ].map((text, i) => (
+                {
+                  t: "医師が遠隔データを確認",
+                  d: "毎月のCPAP使用状況やデータを医師が定期的に確認し、治療の継続をサポートします。",
+                },
+                {
+                  t: "初回1ヶ月フォロー",
+                  d: "初診から1ヶ月後にオンライン再診を行い、機器の使用感や体調の変化を丁寧に確認します。",
+                },
+                {
+                  t: "必要時は対面医療へ連携",
+                  d: "症状の変化や対面での検査が必要と判断された場合は、速やかに適切な医療機関をご案内します。",
+                },
+              ].map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-center rounded-xl border border-slate-100 bg-slate-50 p-3 text-center text-xs font-semibold text-[#0B1F3A] shadow-sm"
+                  className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"
                 >
-                  {text}
+                  <div className="text-sm font-semibold text-[#0B1F3A]">{item.t}</div>
+                  <div className="mt-3 text-sm text-slate-700 leading-relaxed">
+                    {item.d}
+                  </div>
                 </div>
               ))}
             </div>
