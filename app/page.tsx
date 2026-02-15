@@ -4,19 +4,19 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#171717]">
       {/* Header */}
-      <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+      <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-5xl items-start justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <Image
               src="/logo.png"
               alt="SAS CPAP オンラインクリニック ロゴ"
-              width={40}
-              height={40}
-              className="h-11 w-11 md:h-12 md:w-12 rounded-xl border border-slate-200 bg-white p-1.5 object-contain"
+              width={64}
+              height={64}
+              className="h-14 w-14 md:h-16 md:w-16 rounded-xl border border-slate-200 bg-white p-1.5 object-contain"
             />
             <div className="leading-tight">
               <div className="text-sm text-slate-500">sas-cpap.jp</div>
-              <div className="text-lg font-semibold text-[#0B1F3A]">
+              <div className="text-xl font-semibold text-[#0B1F3A]">
                 SAS CPAP オンラインクリニック
               </div>
               <div className="text-xs text-slate-500 font-normal mt-0.5">
@@ -24,28 +24,28 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-            <a href="#transfer" className="hover:text-[#0B1F3A] transition-colors">
+          <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
+            <a href="#transfer" className="hover:text-slate-900 transition-colors">
               転院について
             </a>
-            <a href="#services" className="hover:text-[#0B1F3A] transition-colors">
+            <a href="#services" className="hover:text-slate-900 transition-colors">
               診療内容
             </a>
-            <a href="#flow" className="hover:text-[#0B1F3A] transition-colors">
+            <a href="#flow" className="hover:text-slate-900 transition-colors">
               診療の流れ
             </a>
-            <a href="#fees" className="hover:text-[#0B1F3A] transition-colors">
+            <a href="#fees" className="hover:text-slate-900 transition-colors">
               料金・保険
             </a>
-            <a href="#access" className="hover:text-[#0B1F3A] transition-colors">
+            <a href="#access" className="hover:text-slate-900 transition-colors">
               クリニックについて
             </a>
           </nav>
           <a
             href="#reserve"
-            className="rounded-xl bg-[#0B1F3A] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0a2847] transition-colors"
+            className="rounded-xl bg-[#0B1F3A] px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#0a2847] transition-colors"
           >
-            オンライン診療予約
+            予約
           </a>
         </div>
       </header>
@@ -65,7 +65,14 @@ export default function Home() {
               <span className="block mt-2">オンライン中心の</span>
               <span className="block">定期フォロー外来</span>
             </h1>
-            <p className="mt-3 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
+
+            <ul className="mt-6 space-y-2 text-sm sm:text-base text-slate-700 text-left max-w-fit mx-auto md:mx-0">
+              <li>✓ すでにCPAP治療を受けている方</li>
+              <li>✓ 症状が安定しており、定期フォローが中心の方</li>
+              <li>✓ 通院負担を減らしたい方</li>
+            </ul>
+
+            <p className="mt-6 inline-flex items-center rounded-full border bg-white/70 px-3 py-1 text-xs text-slate-700">
               CPAP継続フォロー中心
             </p>
             <p className="mt-4 text-sm text-slate-700 leading-relaxed">
@@ -123,9 +130,9 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#reserve"
-                className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
+                className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
               >
-                オンライン診療予約
+                継続フォローの予約はこちら
               </a>
               <a
                 href="#eligibility"
@@ -134,6 +141,12 @@ export default function Home() {
                 対象か確認する（受診可否の相談）
               </a>
             </div>
+            <p className="mt-3 text-xs text-slate-500">
+              ※現在のCPAP機器のままご相談いただける場合があります
+            </p>
+            <p className="mt-1 text-xs text-slate-500">
+              ※診療前に費用の目安をご案内し、ご同意のうえで進めます
+            </p>
             <p className="mt-3 text-xs text-slate-500">
               ※現在CPAP治療中の方を主な対象とした継続フォロー外来です。
             </p>
@@ -166,6 +179,12 @@ export default function Home() {
               >
                 受診対象か確認する
               </a>
+              <a
+                href="#reserve"
+                className="mt-2 inline-flex items-center text-sm font-medium text-[#0B1F3A] underline underline-offset-4 hover:text-[#0a2847]"
+              >
+                継続フォローの予約へ
+              </a>
             </div>
           </div>
         </div>
@@ -192,9 +211,9 @@ export default function Home() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
             href="#reserve"
-            className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
+            className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
           >
-            オンライン診療予約
+            継続フォローの予約はこちら
           </a>
         </div>
       </section>
@@ -331,9 +350,9 @@ export default function Home() {
           <div className="mt-8">
             <a
               href="#reserve"
-              className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
+              className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
             >
-              オンライン診療予約
+              継続フォローの予約はこちら
             </a>
           </div>
         </div>
@@ -403,9 +422,9 @@ export default function Home() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#"
-                className="rounded-xl bg-[#0B1F3A] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
+                className="rounded-xl bg-[#0B1F3A] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
               >
-                オンライン診療予約
+                継続フォローの予約はこちら
               </a>
               <a
                 href="#access"
@@ -546,9 +565,9 @@ export default function Home() {
             <div className="mt-8">
               <a
                 href="#reserve"
-                className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors"
+                className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
               >
-                オンライン診療予約
+                継続フォローの予約はこちら
               </a>
             </div>
             <p className="mt-4 text-xs text-slate-500">

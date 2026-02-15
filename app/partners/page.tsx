@@ -27,14 +27,14 @@ export default function PartnersPage() {
   
             <div className="flex items-center gap-3">
               <a
-                href="/#reserve"
-                className="hidden rounded-xl bg-[#0B1F3A] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-95 sm:inline-flex"
+                href="/medical"
+                className="hidden rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50 sm:inline-flex"
               >
-                オンライン診療予約
+                医療機関様向け
               </a>
               <a
                 href="/"
-                className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50"
+                className="rounded-xl bg-[#0B1F3A] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-95"
               >
                 患者さま向けLPへ
               </a>
