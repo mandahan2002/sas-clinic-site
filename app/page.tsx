@@ -7,7 +7,13 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-[#0B1F3A]" />
+            <Image
+              src="/logo.png"
+              alt="SAS CPAP オンラインクリニック ロゴ"
+              width={40}
+              height={40}
+              className="h-11 w-11 md:h-12 md:w-12 rounded-xl border border-slate-200 bg-white p-1.5 object-contain"
+            />
             <div className="leading-tight">
               <div className="text-sm text-slate-500">sas-cpap.jp</div>
               <div className="text-lg font-semibold text-[#0B1F3A]">
