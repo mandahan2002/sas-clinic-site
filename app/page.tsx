@@ -62,8 +62,10 @@ export default function Home() {
             <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
               <span className="block">通院が難しい</span>
               <span className="block">CPAP治療を継続中の方へ</span>
-              <span className="block mt-2">オンライン中心の</span>
-              <span className="block">定期フォロー外来</span>
+              <span className="block mt-4 text-lg font-semibold md:text-2xl">
+                医師が遠隔データを確認する
+                <br className="hidden md:inline" /> オンライン中心の継続フォロー外来
+              </span>
             </h1>
 
             <ul className="mt-6 space-y-2 text-sm sm:text-base text-slate-700 text-left max-w-fit mx-auto md:mx-0">
@@ -121,7 +123,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <p className="mt-8 text-xs font-bold text-slate-500">
+              完全予約制｜オンライン診療対応
+            </p>
+            <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#reserve"
                 className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
@@ -135,10 +140,11 @@ export default function Home() {
                 対象か確認する（受診可否の相談）
               </a>
             </div>
-            <div className="mt-3 flex flex-wrap gap-4 text-xs text-slate-600">
-              <span className="flex items-center gap-1">✓ 完全オンライン中心の継続フォロー</span>
-              <span className="flex items-center gap-1">✓ 所要時間：約10分</span>
-              <span className="flex items-center gap-1">✓ 現在のCPAP機器のまま相談可能</span>
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-600">
+              <span className="flex items-center gap-1">✓ 医師がデータを確認</span>
+              <span className="flex items-center gap-1">✓ 初回1ヶ月フォローあり</span>
+              <span className="flex items-center gap-1">✓ 現在の機器のまま相談可能</span>
+              <span className="flex items-center gap-1">✓ 完全オンライン中心</span>
             </div>
             <p className="mt-4 text-xs text-slate-500">
               ※現在のCPAP機器のままご相談いただける場合があります
@@ -171,7 +177,7 @@ export default function Home() {
                 </div>
                 <div className="px-4 py-3">
                   <p className="text-xs text-slate-600">
-                    自宅から、約10分で完結するオンライン診療
+                    自宅から、医師による継続管理を受けられます
                   </p>
                 </div>
               </div>
@@ -207,6 +213,9 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <p className="mt-8 text-center text-xs text-slate-500">
+            初診後約1ヶ月フォロー｜安定後は約3ヶ月ごとの定期診療
+          </p>
         </div>
       </section>
 
@@ -228,7 +237,7 @@ export default function Home() {
                 },
                 {
                   t: "初回1ヶ月フォロー",
-                  d: "初診から1ヶ月後にオンライン再診を行い、機器の使用感や体調の変化を丁寧に確認します。",
+                  d: "初診から約1ヶ月後に再診を行い、状態が安定している場合は約3ヶ月ごとの定期管理に移行します。",
                 },
                 {
                   t: "必要時は対面医療へ連携",
@@ -372,7 +381,7 @@ export default function Home() {
               },
               {
                 n: "3",
-                t: "データ確認・継続フォロー",
+                t: "遠隔データ確認（直近使用状況）・継続フォロー",
                 d: "遠隔モニタリングデータを確認し、3か月ごとの定期フォローにも対応します。",
               },
             ].map((s) => (
@@ -403,6 +412,33 @@ export default function Home() {
                 <span className="text-sm text-slate-700">{point}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Limitations */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              当院で対応が難しいケースについて
+            </h2>
+            <div className="mt-4 text-sm leading-relaxed text-slate-700">
+              <p>
+                オンライン診療は便利な一方で、すべてのケースに適しているわけではありません。
+                <br />
+                以下の場合は、対面医療機関での受診をご案内することがあります。
+              </p>
+              <ul className="mt-4 list-disc space-y-2 pl-5">
+                <li>CPAP導入直後で状態が不安定な場合</li>
+                <li>強い眠気や症状の急な悪化がある場合</li>
+                <li>重篤な合併症が疑われる場合</li>
+                <li>医師が対面診察が必要と判断した場合</li>
+              </ul>
+              <p className="mt-6 text-xs text-slate-500">
+                当院では、患者様の安全を最優先に診療方針を判断しています。
+              </p>
+            </div>
           </div>
         </div>
       </section>
