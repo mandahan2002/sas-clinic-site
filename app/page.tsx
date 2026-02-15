@@ -215,7 +215,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
             <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
-              医師による継続管理体制について
+              医師による継続管理体制
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
               当院では、CPAP治療を継続して安全に続けることを重視し、オンライン中心でも医師による定期的な確認を行っています。
@@ -223,7 +223,7 @@ export default function Home() {
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {[
                 {
-                  t: "医師が遠隔データを確認",
+                  t: "医師が遠隔データ確認",
                   d: "毎月のCPAP使用状況やデータを医師が定期的に確認し、治療の継続をサポートします。",
                 },
                 {
@@ -348,7 +348,7 @@ export default function Home() {
       {/* Flow */}
       <section id="flow" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">診療フロー</h2>
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">オンライン診療の流れ</h2>
           <div className="mt-6 rounded-3xl overflow-hidden border border-slate-200/70 bg-white shadow-md">
             <Image
               src="/online-doctor.png"
