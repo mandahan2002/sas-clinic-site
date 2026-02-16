@@ -1,6 +1,24 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 
 export default function PartnersPage() {
+  const textRef = useRef<HTMLPreElement>(null);
+
+  const handleCopy = async () => {
+    if (!textRef.current) return;
+
+    const text = textRef.current.innerText;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("コピーしました");
+    } catch (e) {
+      alert("コピーに失敗しました");
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white text-[#171717]">
       {/* Header */}
@@ -24,10 +42,7 @@ export default function PartnersPage() {
             </a>
           </div>
           <div className="flex items-center gap-3">
-            <a
-              href="/"
-              className="hidden rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50 sm:inline-flex"
-            >
+            <a href="/" className="text-xs text-slate-500 underline hover:text-slate-700 transition-colors">
               患者さま向けLP
             </a>
             <a
@@ -124,6 +139,60 @@ export default function PartnersPage() {
         </div>
       </section>
 
+      {/* Why partners recommend */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">
+            代理店様がご案内しやすい理由
+          </h2>
+
+          <p className="mt-3 max-w-prose text-sm text-slate-700">
+            現場のオペレーションが複雑にならないよう、
+            シンプルな連携を前提に設計しています。
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+
+            {/* Card 1 */}
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="text-sm font-semibold text-[#0B1F3A]">
+                代理店様の作業は最小限
+              </div>
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                患者様ご本人からの予約を基本としており、
+                代理店様側での特別な事務手続きは原則ありません。
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="text-sm font-semibold text-[#0B1F3A]">
+                機器変更を前提としない運用
+              </div>
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                現在ご使用中のCPAP機器の継続利用を重視しており、
+                無理な切替提案は行いません。
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="text-sm font-semibold text-[#0B1F3A]">
+                必要時のみ情報共有
+              </div>
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                検査結果や設定情報は、
+                必要な場合のみご提供をお願いしています。
+                日常的な対応は不要です。
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* Collaboration Flow */}
       <section className="border-t border-slate-100 bg-[#F4F7FA] py-16 scroll-mt-24" id="flow">
         <div className="mx-auto max-w-5xl px-6">
@@ -160,8 +229,11 @@ export default function PartnersPage() {
             <h3 className="text-base font-bold text-[#0B1F3A] mb-3">
               患者さま案内用テンプレート（コピーしてご利用ください）
             </h3>
-            <div className="relative rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-inner">
-              <pre className="whitespace-pre-wrap text-sm text-slate-700 font-sans leading-relaxed select-all">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-inner">
+              <div className="text-xs font-semibold text-[#0B1F3A] mb-2">
+                そのまま患者様へ送付できます
+              </div>
+              <pre ref={textRef} className="whitespace-pre-wrap text-sm text-slate-700 font-sans leading-relaxed select-all">
 {`CPAP治療継続中で通院が負担になっている方へ、オンライン中心の継続フォロー外来があります。
 予約はご本人から行っていただく必要があります。
 ご興味があれば、下記のクリニック公式サイトをご確認ください。
@@ -171,10 +243,13 @@ https://sas-cpap.jp
 
 ※紹介状がなくてもご相談いただける場合がありますが、これまでの検査結果やお薬手帳などがあると診療がスムーズです。`}
               </pre>
-              <div className="absolute top-4 right-4 text-xs text-slate-400 font-medium">
-                Select All & Copy
-              </div>
             </div>
+            <button
+              onClick={handleCopy}
+              className="mt-4 w-full rounded-xl bg-[#0B1F3A] py-3 text-sm font-semibold text-white hover:bg-[#0a2847] transition-colors shadow-sm"
+            >
+              文章をコピーする
+            </button>
           </div>
         </div>
       </section>
