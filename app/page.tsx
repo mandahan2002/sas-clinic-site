@@ -509,6 +509,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Quantitative Monitoring (New) */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">確認する主な指標（例）</h2>
+          <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+            CPAP継続管理では、使用状況や自覚症状など複数の情報を総合して判断します。
+            当院では、以下のような項目を確認しながらフォローを行います。
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              { t: "使用状況", d: "使用日数・使用時間の目安など" },
+              { t: "呼吸イベント指標", d: "AHI 等（機器や環境により取得可否は異なります）" },
+              { t: "自覚症状", d: "眠気・睡眠の質・日中の支障など" },
+              { t: "マスク関連", d: "装着感・リーク・皮膚トラブル等" },
+              { t: "安全性", d: "症状変化がある場合は対面受診も含めて判断" },
+              { t: "継続方針", d: "1ヶ月フォロー後、状態により定期管理へ" },
+            ].map((x, i) => (
+              <div key={i} className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">{x.t}</div>
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">{x.d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-slate-500">
+            ※上記は一例です。取得できるデータや判断材料は、機器・状況により異なります。
+          </p>
+        </div>
+      </section>
+
       <section id="transfer" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAPの転院をご検討の方へ</h2>
@@ -589,9 +618,68 @@ export default function Home() {
 
           <ul className="mt-5 space-y-3 text-sm text-slate-700">
             <li>・医師がCPAPデータを定期的に確認します</li>
-            <li>・眠気リスクが高い職種では医学的判断に基づきフォロー間隔を調整します</li>
+            <li>・運転業務など、眠気が重大な影響を及ぼし得る職種の方は、状態に応じてフォロー間隔を短く設定する場合があります</li>
             <li>・対面診療が必要と判断した場合は速やかにご案内します</li>
             <li>・医療広告ガイドラインに基づき誇張表現は行いません</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Operations Policy */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-xl font-bold text-[#0B1F3A]">診療の運用方針（ポリシー）</h2>
+          <div className="mt-6 space-y-6">
+            <div className="rounded-xl bg-slate-50 p-6">
+              <h3 className="text-sm font-bold text-[#0B1F3A]">診療の独立性と中立性</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                当院は、特定の機器メーカーや代理店に依存しない中立的な立場を堅持します。
+                医学的適応に基づき、患者様にとって最適な治療方針を提案します。
+              </p>
+            </div>
+            <div className="rounded-xl bg-slate-50 p-6">
+              <h3 className="text-sm font-bold text-[#0B1F3A]">データ管理とプライバシー</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                オンライン診療における通信の安全性（セキュリティ）を重視し、
+                患者様の個人情報および診療データは厳格な管理下で取り扱います。
+              </p>
+            </div>
+            <div className="rounded-xl bg-slate-50 p-6">
+              <h3 className="text-sm font-bold text-[#0B1F3A]">継続的な質向上</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                医学的知見の更新や診療プロセスの見直しを定期的に行い、
+                安全で質の高いオンライン診療の提供に努めます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advertising Compliance */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-xl font-bold text-[#0B1F3A]">医療広告に関する表現について</h2>
+          <p className="mt-4 text-sm text-slate-700 leading-relaxed">
+            当院のウェブサイトは、医療法および医療広告ガイドラインを遵守し、
+            適切な情報提供に努めています。
+          </p>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-700">
+            <li>
+              <span className="font-semibold text-[#0B1F3A]">比較優良広告の禁止：</span>
+              「No.1」「最高」等の比較表現は使用しません。
+            </li>
+            <li>
+              <span className="font-semibold text-[#0B1F3A]">誇大広告の禁止：</span>
+              事実と異なる、または誤認を与える表現は行いません。
+            </li>
+            <li>
+              <span className="font-semibold text-[#0B1F3A]">体験談の不掲載：</span>
+              主観的な体験談や口コミによる誘導は行いません。
+            </li>
+            <li>
+              <span className="font-semibold text-[#0B1F3A]">費用等の明示：</span>
+              自由診療等の費用やリスクについても透明性を保ちます（当院は原則保険診療です）。
+            </li>
           </ul>
         </div>
       </section>
@@ -885,6 +973,35 @@ export default function Home() {
                   本サイトは一般的な情報提供であり、診断・治療効果を保証するものではありません。
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signal / Transparency */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-12">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold text-[#0B1F3A]">
+                医療情報の透明性と信頼性
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed max-w-2xl">
+                当院は、適切な医療提供と透明性の確保に努めています。<br />
+                ・適応外の治療や、医学的根拠の乏しい治療は行いません。<br />
+                ・診療範囲（CPAP継続管理）を明確にし、専門外の領域については適切な医療機関へ紹介します。<br />
+                ・医師法、医療法、および関連法規を遵守した運営を行っています。
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <div className="rounded-lg bg-slate-50 px-3 py-2 text-center">
+                <div className="text-[10px] font-semibold text-slate-400">Information</div>
+                <div className="text-xs font-bold text-[#0B1F3A]">医療情報提供</div>
+              </div>
+              <div className="rounded-lg bg-slate-50 px-3 py-2 text-center">
+                <div className="text-[10px] font-semibold text-slate-400">Compliance</div>
+                <div className="text-xs font-bold text-[#0B1F3A]">法令遵守</div>
+              </div>
             </div>
           </div>
         </div>
