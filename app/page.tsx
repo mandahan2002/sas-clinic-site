@@ -153,6 +153,11 @@ export default function Home() {
                 </span>
               </h1>
 
+              {/* Specialty Outpatient Tag */}
+              <div className="mt-4 inline-flex rounded-full bg-[#0B1F3A]/5 px-3 py-1 text-xs font-semibold text-[#0B1F3A]">
+                睡眠時無呼吸症候群（SAS）継続フォロー専門外来
+              </div>
+
               <ul className="mt-6 space-y-2 text-sm sm:text-base text-slate-700 text-left max-w-fit mx-auto md:mx-0">
                 <li>✓ すでにCPAP治療を受けている方</li>
                 <li>✓ 症状が安定しており、定期フォローが中心の方</li>
@@ -467,6 +472,43 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Specialty Trust Block */}
+      <section className="border-t border-slate-100 bg-[#F8FAFC]">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">
+            CPAP継続フォロー専門外来としての体制
+          </h2>
+
+          <p className="mt-4 text-sm text-slate-700 leading-relaxed">
+            当院では、睡眠時無呼吸症候群（SAS）の継続治療に特化し、
+            医師による遠隔データ確認と医学的判断に基づいたフォロー体制を整えています。
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                t: "遠隔モニタリング管理",
+                d: "CPAP使用状況を医師が定期的に確認し、必要に応じて調整を行います。"
+              },
+              {
+                t: "医学的判断を優先",
+                d: "オンライン診療でも対面診療が必要と判断した場合は適切にご案内します。"
+              },
+              {
+                t: "地域医療との連携",
+                d: "必要に応じて対面医療機関への受診を提案し、安全性に配慮します。"
+              }
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">{item.t}</div>
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">{item.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="transfer" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAPの転院をご検討の方へ</h2>
@@ -535,6 +577,22 @@ export default function Home() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Medical Safety Policy */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-xl font-bold text-[#0B1F3A]">
+            医療安全への取り組み
+          </h2>
+
+          <ul className="mt-5 space-y-3 text-sm text-slate-700">
+            <li>・医師がCPAPデータを定期的に確認します</li>
+            <li>・眠気リスクが高い職種では医学的判断に基づきフォロー間隔を調整します</li>
+            <li>・対面診療が必要と判断した場合は速やかにご案内します</li>
+            <li>・医療広告ガイドラインに基づき誇張表現は行いません</li>
+          </ul>
         </div>
       </section>
 
