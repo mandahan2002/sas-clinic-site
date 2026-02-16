@@ -15,6 +15,27 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Medical Organization Data for Structured Data (JSON-LD)
+  const medicalOrgStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "SAS CPAP オンラインクリニック",
+    "medicalSpecialty": [
+      "SleepMedicine",
+      "Otolaryngologic"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "東京都",
+      "addressLocality": "渋谷区",
+      "streetAddress": "代々木2丁目23-1 ニューステートメナー1226"
+    },
+    "physician": {
+      "@type": "Physician",
+      "name": "廣瀬 有紀子"
+    }
+  };
+
   // FAQ Data for Structured Data (JSON-LD)
   const faqStructuredData = {
     "@context": "https://schema.org",
@@ -22,23 +43,15 @@ export default function Home() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "保険診療ですか？",
+        "name": "CPAP転院に紹介状は必要ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、当院の診療は原則として保険診療となります。受診時には必ず健康保険証（またはマイナ保険証）をご用意ください。"
+          "text": "紹介状がなくてもご相談いただける場合があります。これまでの検査結果や診療情報をお持ちいただくと、よりスムーズな診療が可能です。"
         }
       },
       {
         "@type": "Question",
-        "name": "紹介状は必要ですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "紹介状がなくてもご相談いただけます。これまでの検査結果や診療情報をお持ちいただくと、よりスムーズな診療が可能です。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "今のCPAP機器のまま受診できますか？",
+        "name": "今の機器のまま使える？",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "はい、多くのメーカーの機器に対応しておりますので、現在の機器を継続してご使用いただける場合がほとんどです。予約時にメーカー名や機種名をお知らせください。"
@@ -46,26 +59,26 @@ export default function Home() {
       },
       {
         "@type": "Question",
-        "name": "支払い方法は？",
+        "name": "オンラインだけで大丈夫？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "クレジットカードによるオンライン決済に対応しております。診療完了後、登録いただいたカードから自動的に決済が行われます。"
+          "text": "基本的にはオンラインで完結しますが、症状が不安定な場合や、医師が対面での検査が必要と判断した場合には、近隣の医療機関をご案内することがあります。"
         }
       },
       {
         "@type": "Question",
-        "name": "診察時間はどれくらいですか？",
+        "name": "眠気が強い場合は？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "オンライン診察自体は通常10分程度で終了します。通院や待ち時間の負担なく、効率的に受診いただけます。"
+          "text": "CPAP治療中でも眠気が強い場合は、治療圧の調整や他の睡眠障害の合併が考えられます。オンライン診察にて状況を詳細に伺い、適切な対応をご提案します。"
         }
       },
       {
         "@type": "Question",
-        "name": "対面受診が必要になるのはどんな時ですか？",
+        "name": "保険診療ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "症状が不安定な場合、重篤な合併症が疑われる場合、または医師が対面での検査や診察が必要と判断した場合には、近隣の医療機関をご案内することがあります。"
+          "text": "はい、当院の診療は原則として保険診療となります。受診時には必ず健康保険証（またはマイナ保険証）をご用意ください。"
         }
       }
     ]
@@ -149,13 +162,13 @@ export default function Home() {
               {/* Mobile optimized mini badges */}
               <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-2 text-xs font-medium text-[#0B1F3A]">
                 <span className="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1">
-                  ✓ 医師が確認
+                  ✓ 医師が遠隔データ確認
                 </span>
                 <span className="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1">
-                  ✓ 初回1ヶ月
+                  ✓ 初回1ヶ月フォロー
                 </span>
                 <span className="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1">
-                  ✓ 3ヶ月ごと
+                  ✓ 必要時は対面医療機関へ連携
                 </span>
               </div>
 
@@ -322,6 +335,19 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* H2: CPAP継続フォローとは（SEO強化・医療説明） */}
+      <section className="bg-white border-t border-slate-100">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">
+            CPAP継続フォローとは
+          </h2>
+          <p className="mt-4 text-sm text-slate-700 leading-relaxed">
+            CPAP治療では、使用状況の確認や副作用の評価を継続的に行うことが重要です。
+            当院では遠隔モニタリングを活用し、オンライン中心でも安全性に配慮した管理を行っています。
+          </p>
         </div>
       </section>
 
@@ -698,6 +724,10 @@ export default function Home() {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
           />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalOrgStructuredData) }}
+          />
         </div>
       </section>
 
@@ -724,6 +754,18 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 医師監修について */}
+      <section className="bg-[#F8FAFC] border-t border-slate-100">
+        <div className="mx-auto max-w-5xl px-6 py-12">
+          <h2 className="text-xl font-bold text-[#0B1F3A]">医師監修について</h2>
+          <p className="mt-4 text-sm text-slate-700 leading-relaxed">
+            本サイトの医療情報は、耳鼻咽喉科専門医が監修し、
+            CPAP治療の継続管理に関する一般的な情報提供を目的としています。
+            個別の診断や治療判断はオンライン診療にて行います。
+          </p>
         </div>
       </section>
 
