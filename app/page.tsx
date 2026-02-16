@@ -364,59 +364,91 @@ export default function Home() {
       {/* Flow */}
       <section id="flow" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">オンライン診療の流れ</h2>
-          <div className="mt-6 rounded-3xl overflow-hidden border border-slate-200/70 bg-white shadow-md">
-            <Image
-              src="/online-doctor.png"
-              alt="オンライン診療の様子（医師側）"
-              width={1200}
-              height={700}
-              className="w-full h-[180px] md:h-[220px] object-cover"
-            />
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold text-[#0B1F3A]">診療の流れ</h2>
+            <p className="mt-3 text-sm font-medium text-slate-600">スマホだけで簡単にオンライン受診できます</p>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                n: "1",
-                t: "WEBで予約（約1分）",
-                d: "空き枠から選ぶだけ。24時間いつでも予約可能です。",
-              },
-              {
-                n: "2",
-                t: "オンライン診察（約10分）",
-                d: "現在のCPAP使用状況やお困りごとを確認します。必要に応じて今後のフォロー方針をご説明します。",
-              },
-              {
-                n: "3",
-                t: "遠隔データ確認（直近使用状況）・継続フォロー",
-                d: "遠隔モニタリングデータを確認し、3か月ごとの定期フォローにも対応します。",
-              },
-            ].map((s) => (
-              <div
-                key={s.n}
-                className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"
-              >
-                <div className="text-xs font-medium text-slate-500">STEP {s.n}</div>
-                <div className="mt-1 text-sm font-semibold text-[#0B1F3A]">{s.t}</div>
-                <div className="mt-3 text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
-                  {s.d}
-                </div>
+          
+          <div className="grid gap-6 md:grid-cols-4 relative">
+            {/* Connecting Line (Desktop) */}
+            <div className="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-0.5 bg-slate-100 -z-10" />
+
+            {/* STEP 1 */}
+            <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0h18M5.25 12h13.5h-13.5zm1.5 8.625a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
+                </svg>
               </div>
-            ))}
+              <div className="text-xs font-bold text-[#0B1F3A] mb-1">STEP 1</div>
+              <h3 className="text-base font-bold text-[#0B1F3A] mb-3">オンライン予約</h3>
+              <p className="text-sm text-slate-600 leading-relaxed text-left w-full">
+                24時間いつでもスマホから予約できます。<br />
+                初めての方でも簡単にお申し込みいただけます。
+              </p>
+            </div>
+
+            {/* STEP 2 */}
+            <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                </svg>
+              </div>
+              <div className="text-xs font-bold text-[#0B1F3A] mb-1">STEP 2</div>
+              <h3 className="text-base font-bold text-[#0B1F3A] mb-3">事前準備</h3>
+              <div className="text-sm text-slate-600 leading-relaxed text-left w-full space-y-2">
+                <p>保険証などの必要情報を予約画面からアップロードいただきます。</p>
+                <p>現在CPAP治療中の方は、紹介状や検査結果があれば事前にご提出ください。</p>
+                <p className="text-xs text-slate-500">※紹介状がなくても受診可能です</p>
+              </div>
+            </div>
+
+            {/* STEP 3 */}
+            <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+              </div>
+              <div className="text-xs font-bold text-[#0B1F3A] mb-1">STEP 3</div>
+              <h3 className="text-base font-bold text-[#0B1F3A] mb-3">オンライン診療</h3>
+              <p className="text-sm text-slate-600 leading-relaxed text-left w-full">
+                ご自宅や職場から、スマホ・PCで医師とビデオ通話を行います。<br />
+                来院の必要はありません。
+              </p>
+            </div>
+
+            {/* STEP 4 */}
+            <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                </svg>
+              </div>
+              <div className="text-xs font-bold text-[#0B1F3A] mb-1">STEP 4</div>
+              <h3 className="text-base font-bold text-[#0B1F3A] mb-3">CPAP継続フォロー</h3>
+              <p className="text-sm text-slate-600 leading-relaxed text-left w-full">
+                治療データを確認しながら、オンラインで継続サポートします。<br />
+                転院相談だけでも可能です。
+              </p>
+            </div>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-6">
             {[
-              "通院不要",
-              "ご自宅から受診可能",
-              "現在のCPAP機器のままご相談可能",
+              "紹介状がなくてもOK",
+              "来院不要",
+              "全国対応",
             ].map((point) => (
               <div
                 key={point}
-                className="flex items-center gap-2 rounded-xl border border-slate-100 bg-white p-4 shadow-sm"
+                className="flex items-center gap-1.5 rounded-full bg-slate-50 px-4 py-2 text-xs font-medium text-slate-600"
               >
-                <span className="text-[#0B1F3A] font-bold">✓</span>
-                <span className="text-sm text-slate-700">{point}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-[#0B1F3A]">
+                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                </svg>
+                {point}
               </div>
             ))}
           </div>
