@@ -15,6 +15,62 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // FAQ Data for Structured Data (JSON-LD)
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "保険診療ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、当院の診療は原則として保険診療となります。受診時には必ず健康保険証（またはマイナ保険証）をご用意ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "紹介状は必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "紹介状がなくてもご相談いただけます。これまでの検査結果や診療情報をお持ちいただくと、よりスムーズな診療が可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "今のCPAP機器のまま受診できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、多くのメーカーの機器に対応しておりますので、現在の機器を継続してご使用いただける場合がほとんどです。予約時にメーカー名や機種名をお知らせください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "支払い方法は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "クレジットカードによるオンライン決済に対応しております。診療完了後、登録いただいたカードから自動的に決済が行われます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "診察時間はどれくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "オンライン診察自体は通常10分程度で終了します。通院や待ち時間の負担なく、効率的に受診いただけます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "対面受診が必要になるのはどんな時ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "症状が不安定な場合、重篤な合併症が疑われる場合、または医師が対面での検査や診察が必要と判断した場合には、近隣の医療機関をご案内することがあります。"
+        }
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-white text-[#171717] pb-20 md:pb-0">
       {/* Header */}
@@ -50,6 +106,9 @@ export default function Home() {
             </a>
             <a href="#fees" className="hover:text-slate-900 transition-colors">
               料金・保険
+            </a>
+            <a href="#faq" className="hover:text-slate-900 transition-colors">
+              よくある質問
             </a>
             <a href="#access" className="hover:text-slate-900 transition-colors">
               クリニックについて
@@ -100,6 +159,12 @@ export default function Home() {
                 </span>
               </div>
 
+              {/* Internal Links (SEO & Navigation) */}
+              <div className="mt-4 hidden md:flex gap-4 text-xs font-medium text-slate-500 underline underline-offset-4">
+                 <a href="#transfer" className="hover:text-slate-800">転院の方はこちら</a>
+                 <a href="#faq" className="hover:text-slate-800">よくある質問</a>
+              </div>
+
               {/* CTA Area (Moved Up) */}
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center justify-center md:justify-start">
                 <a
@@ -114,6 +179,11 @@ export default function Home() {
                 >
                   対象か確認する
                 </a>
+              </div>
+              
+              {/* Mobile Only Link */}
+              <div className="mt-3 md:hidden text-center">
+                <a href="#transfer" className="text-xs text-slate-500 underline underline-offset-4">転院の方はこちら</a>
               </div>
 
               {/* Quantitative Info Line */}
@@ -213,7 +283,7 @@ export default function Home() {
                 <div className="relative">
                   <Image
                     src="/online-patient.png"
-                    alt="オンライン診療の様子（患者側）"
+                    alt="オンライン診療（CPAP継続フォロー）のイメージ"
                     width={1200}
                     height={800}
                     className="w-full h-[220px] md:h-[300px] object-cover object-[center_30%]"
@@ -242,16 +312,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Medical Management System */}
-      <section className="bg-white">
+      {/* H2: CPAP継続フォロー（オンライン中心） */}
+      <section id="services" className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
             <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
-              医師による継続管理体制
+              CPAP継続フォロー（オンライン中心）
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
-              当院では、CPAP治療を継続して安全に続けることを重視し、オンライン中心でも医師による定期的な確認を行っています。
+              当院では、CPAP治療が安定している方を対象に、通院の負担を軽減するオンライン診療を行っています。毎月のデータは医師が遠隔で確認し、3ヶ月に1回の定期受診で経過をフォローします。対面での検査が必要な場合は、適切な医療機関をご案内する安全な体制を整えています。忙しい方でも無理なく治療を継続できる環境を提供します。
             </p>
+            
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {[
                 {
@@ -269,7 +340,7 @@ export default function Home() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"
+                  className="rounded-2xl border border-slate-100 bg-[#F8FAFC] p-5 shadow-sm"
                 >
                   <div className="text-sm font-semibold text-[#0B1F3A]">{item.t}</div>
                   <div className="mt-3 text-sm text-slate-700 leading-relaxed">
@@ -278,107 +349,102 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section
-        id="eligibility"
-        className="mx-auto max-w-5xl px-6 py-14 scroll-mt-24"
-      >
-        <h2 className="text-2xl font-bold text-[#0B1F3A]">受診対象の確認（目安）</h2>
-        <p className="mt-2 text-sm text-slate-700">
-          当院は「安定期のCPAP継続フォロー」を中心としています。迷う場合は、オンライン診療で医師にご相談ください。
-        </p>
-        <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-slate-700">
-          <li>すでにCPAP治療を継続している</li>
-          <li>状態が安定している（急な悪化や強い症状がない）</li>
-          <li>3ヶ月ごとの定期フォローを希望している</li>
-          <li>緊急性の高い症状がない</li>
-          <li>オンライン診療が可能（ビデオ通話・本人確認等）</li>
-        </ul>
-        <p className="mt-4 text-xs text-slate-500">
-          緊急性が疑われる場合は、速やかに対面受診または救急をご検討ください。
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a
-            href="#reserve"
-            className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
-          >
-            継続フォローの予約はこちら
-          </a>
-        </div>
-      </section>
-
-      {/* Target Audience */}
-      <section className="border-t border-slate-100 bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">こんな方へ</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <div className="rounded-xl border border-slate-100 bg-white p-5 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">通院が大変</div>
-            </div>
-            <div className="rounded-xl border border-slate-100 bg-white p-5 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">仕事・育児で受診時間が合わない</div>
-            </div>
-            <div className="rounded-xl border border-slate-100 bg-white p-5 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">今の医療機関がオンライン未対応</div>
-            </div>
-            <div className="rounded-xl border border-slate-100 bg-white p-5 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">CPAPは続けたい（継続したい）</div>
+            {/* Eligibility Check (Integrated here) */}
+            <div id="eligibility" className="mt-10 border-t border-slate-100 pt-8">
+              <h3 className="text-lg font-bold text-[#0B1F3A]">受診対象の確認（目安）</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                当院は「安定期のCPAP継続フォロー」を中心としています。
+              </p>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-slate-700">
+                <li>すでにCPAP治療を継続している</li>
+                <li>状態が安定している（急な悪化や強い症状がない）</li>
+                <li>3ヶ月ごとの定期フォローを希望している</li>
+                <li>緊急性の高い症状がない</li>
+                <li>オンライン診療が可能（ビデオ通話・本人確認等）</li>
+              </ul>
+              <p className="mt-4 text-xs text-slate-500">
+                緊急性が疑われる場合は、速やかに対面受診または救急をご検討ください。
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
+      {/* H2: CPAPの転院をご検討の方へ */}
+      <section id="transfer" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">診療内容</h2>
-          <p className="mt-2 text-sm text-slate-700">
-            主軸はSAS・CPAPの継続管理です。耳鼻科領域（花粉症・舌下免疫など）はサブとして相談対応します。
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAPの転院をご検討の方へ</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+            転院や里帰り等で医療機関の変更をご検討の方も、紹介状の有無に関わらずご相談いただけます。現在の設定やデータを引き継ぎ、スムーズに継続治療へ移行できるようサポートします。フィリップスやレスメドなど、主要な機器メーカーを問わず対応可能ですので、まずはお気軽にお問い合わせください。
           </p>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">
-                SAS（睡眠時無呼吸症候群）外来
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                問診・既往・検査状況を確認し、必要に応じて自宅検査や対面評価を検討します。
+              <h3 className="text-base font-bold text-[#0B1F3A] mb-3">紹介状について</h3>
+              <p className="text-sm leading-relaxed text-slate-700">
+                紹介状がなくてもご相談いただける場合があります。これまでの検査結果（PSG・簡易検査）や直近の診療情報（設定圧など）をご用意いただくと、よりスムーズな診療が可能です。
               </p>
             </div>
+            
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">
-                CPAP管理（継続フォロー）
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                使用状況や困りごとを確認し、継続しやすい運用を一緒に調整します（医師の判断により対面案内あり）。
-              </p>
+              <h3 className="text-base font-bold text-[#0B1F3A] mb-3">事前の準備</h3>
+              <ul className="space-y-2 text-sm text-slate-700">
+                <li>・現在使用中のCPAP機器情報</li>
+                <li>・お薬手帳（お持ちの場合）</li>
+                <li>・健康保険証</li>
+                <li>・クレジットカード</li>
+              </ul>
             </div>
+
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="text-sm font-semibold text-[#0B1F3A]">
-                花粉症・アレルギー（相談）
-              </div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                症状の経過を確認し、オンラインで対応可能な範囲で助言します。必要時は対面受診をご案内します。
-              </p>
+              <h3 className="text-base font-bold text-[#0B1F3A] mb-3">転院の手順</h3>
+              <ol className="space-y-2 text-sm text-slate-700 list-decimal pl-4">
+                <li>オンライン予約時に「転院希望」を選択</li>
+                <li>問診票に現在の状況を入力</li>
+                <li>必要資料をアップロード</li>
+                <li>オンライン診察で医師と相談</li>
+              </ol>
             </div>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="text-sm font-semibold text-[#0B1F3A] mb-3">機材について</div>
-            <div className="space-y-2 text-sm text-slate-700">
-              <p>各種CPAP機器に対応</p>
-              <p>現在ご使用中の機器のまま継続フォロー可能</p>
-              <p>機材に関するご相談にも対応</p>
+          <div className="mt-8">
+            <a
+              href="#reserve"
+              className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
+            >
+              転院の相談・予約はこちら
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* H2: オンライン診療でできること・できないこと */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              オンライン診療でできること・できないこと
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+              オンライン診療は利便性が高い一方、触診や聴診、対面での検査ができません。症状が不安定な場合や、緊急性が高いと判断される場合は、安全のために近隣の対面医療機関への受診をお願いすることがあります。患者様の健康を最優先に考え、医学的な判断に基づいた適切な受診方法をご提案します。
+            </p>
+            
+            <div className="mt-6">
+              <h3 className="text-sm font-bold text-[#0B1F3A] mb-2">当院で対応が難しいケース</h3>
+              <ul className="list-disc space-y-2 pl-5 text-sm text-slate-700">
+                <li>CPAP導入直後で状態が不安定な場合</li>
+                <li>強い眠気や症状の急な悪化がある場合</li>
+                <li>重篤な合併症が疑われる場合</li>
+                <li>医師が対面診察が必要と判断した場合</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* Flow */}
-      <section id="flow" className="border-t border-slate-100 bg-white scroll-mt-24">
+      <section id="flow" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-[#0B1F3A]">診療の流れ</h2>
@@ -450,111 +516,15 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-6">
-            {[
-              "紹介状がなくてもOK",
-              "来院不要",
-              "全国対応",
-            ].map((point) => (
-              <div
-                key={point}
-                className="flex items-center gap-1.5 rounded-full bg-slate-50 px-4 py-2 text-xs font-medium text-slate-600"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-[#0B1F3A]">
-                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                </svg>
-                {point}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Limitations */}
-      <section className="border-t border-slate-100 bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
-              当院で対応が難しいケースについて
-            </h2>
-            <div className="mt-4 text-sm leading-relaxed text-slate-700">
-              <p>
-                オンライン診療は便利な一方で、すべてのケースに適しているわけではありません。
-                <br />
-                以下の場合は、対面医療機関での受診をご案内することがあります。
-              </p>
-              <ul className="mt-4 list-disc space-y-2 pl-5">
-                <li>CPAP導入直後で状態が不安定な場合</li>
-                <li>強い眠気や症状の急な悪化がある場合</li>
-                <li>重篤な合併症が疑われる場合</li>
-                <li>医師が対面診察が必要と判断した場合</li>
-              </ul>
-              <p className="mt-6 text-xs text-slate-500">
-                当院では、患者様の安全を最優先に診療方針を判断しています。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Transfer */}
-      <section id="transfer" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">現在CPAPをご使用中の方へ（転院対応）</h2>
-          <div className="mt-6 space-y-3">
-            <div className="flex gap-2 text-sm text-slate-700">
-              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-              <span>紹介状がなくてもご相談いただける場合があります。これまでの検査結果や診療情報をご用意いただくとスムーズです。</span>
-            </div>
-            <div className="flex gap-2 text-sm text-slate-700">
-              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-              <span>現在の機器メーカーに関わらずご相談可能</span>
-            </div>
-            <div className="flex gap-2 text-sm text-slate-700">
-              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-              <span>通院負担を減らしながら継続フォロー</span>
-            </div>
-            <div className="flex gap-2 text-sm text-slate-700">
-              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-              <span>必要に応じて地域医療機関への受診をご案内</span>
-            </div>
-            <div className="flex gap-2 text-sm text-slate-700">
-              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-              <span>機器会社様との連携にも配慮し、継続使用を重視</span>
-            </div>
-          </div>
-          <div className="mt-6 rounded-xl border border-slate-200 bg-white/70 p-5 shadow-sm">
-            <div className="text-sm font-semibold text-slate-900">
-              予約前のご準備（任意）
-            </div>
-            <ul className="mt-3 space-y-1.5 list-disc pl-5 text-sm text-slate-700">
-              <li>睡眠検査結果（PSG・簡易検査など）</li>
-              <li>現在使用中のCPAP機器情報</li>
-              <li>直近の診療内容や設定変更の記録</li>
-              <li>紹介状（お持ちの場合）</li>
-            </ul>
-            <p className="mt-3 text-xs text-slate-500">
-              紹介状がなくてもご相談いただける場合があります。情報があると診療がスムーズです。
-            </p>
-          </div>
-          <div className="mt-8">
-            <a
-              href="#reserve"
-              className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
-            >
-              継続フォローの予約はこちら
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Fees */}
+      {/* H2: 料金と保険診療について */}
       <section id="fees" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">料金・お支払い</h2>
-          <p className="mt-2 text-sm text-slate-700">
-            料金は保険診療の範囲・診療内容により異なります。詳細は予約時または診療時にご案内します。
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">料金と保険診療について</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+            当院は原則として保険診療を行います。システム利用料などの追加費用は基本的に発生しません。費用の目安は3割負担の方で月額4,300円〜5,000円程度（3ヶ月に1回受診の場合）です。詳細は予約時にご案内します。クレジットカードによるオンライン決済に対応しており、会計の待ち時間もありません。
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -590,10 +560,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* H2: よくある質問（FAQ） */}
       <section id="faq" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">よくある質問</h2>
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">よくある質問（FAQ）</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+            診療の流れや費用、機器の取り扱いなど、患者様からよくいただくご質問をまとめました。不安な点やご不明な点がある場合は、こちらをご確認いただくか、初診時のオンライン診察にて医師に直接ご相談ください。初めての方でも安心して受診いただけるよう、丁寧な説明を心がけています。
+          </p>
+
           <div className="mt-8 space-y-4">
             {[
               {
@@ -615,6 +589,10 @@ export default function Home() {
               {
                 q: "診察時間はどれくらいですか？",
                 a: "オンライン診察自体は通常10分程度で終了します。通院や待ち時間の負担なく、効率的に受診いただけます。",
+              },
+              {
+                q: "対面受診が必要になるのはどんな時ですか？",
+                a: "症状が不安定な場合、重篤な合併症が疑われる場合、または医師が対面での検査や診察が必要と判断した場合には、近隣の医療機関をご案内することがあります。",
               },
             ].map((item, idx) => (
               <details
@@ -645,18 +623,12 @@ export default function Home() {
               </details>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Schedule */}
-      <section className="border-t border-slate-100 bg-[#F4F7FA]">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">診療日・体制</h2>
-          <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="text-sm font-semibold text-[#0B1F3A] mb-3">定期フォロー枠</div>
-            <p className="text-sm text-slate-700">水曜・土曜（完全予約制）</p>
-            <p className="mt-3 text-sm text-slate-700">継続患者様のご相談はオンライン診察にて対応</p>
-          </div>
+          
+          {/* JSON-LD Script */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+          />
         </div>
       </section>
 
@@ -686,35 +658,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Online Safety */}
-      <section className="border-t border-slate-100 bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">オンライン診療対応エリアについて</h2>
-          <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <p className="text-sm leading-relaxed text-slate-700">
-              必要に応じて患者様のお住まいの地域の医療機関への受診をご案内し、安心して治療を継続できる体制を整えています。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section className="border-t border-slate-100 bg-[#F4F7FA]">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">お問い合わせ（事務連絡）</h2>
-          <div className="mt-6 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <p className="text-xs text-slate-500 mb-3">
-              ※診療内容に関するご相談はオンライン診察にて承っております。
-            </p>
-            <p className="text-xs text-slate-500">
-              ※機器会社様からのご連絡にも対応しております。
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Access / Legal */}
-      <section id="access" className="border-t border-slate-100 bg-white scroll-mt-24">
+      <section id="access" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">クリニックについて</h2>
           <p className="mt-2 text-sm text-slate-700">
@@ -750,16 +695,11 @@ export default function Home() {
               <p className="mt-1 text-xs text-slate-500">
                 ※オンライン診療を主としているため、通常の来院受付は行っておりません。
               </p>
-              <p className="mt-2 text-xs text-slate-500">
-                新宿・代々木エリアに拠点を置き、
-                <br />
-                必要に応じて都内医療機関との連携も視野に入れた体制を整えています。
-              </p>
 
               <div className="mt-4 font-semibold text-slate-900">連絡先</div>
               <div className="mt-1 text-sm text-slate-700">
                 TEL：03-XXXX-XXXX（事務連絡のみ）
-                <span className="block mt-1">※診療内容のご相談はオンライン診療にて承ります</span>
+                <span className="block mt-1">※診療内容のご相談はオンライン診察にて承ります</span>
               </div>
             </div>
 
@@ -781,89 +721,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SAS General Info */}
-      <section className="border-t border-slate-100 bg-[#F4F7FA]">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <h2 className="text-2xl font-bold text-[#0B1F3A]">SAS（睡眠時無呼吸症候群）について</h2>
-          <div className="mt-6 space-y-6 text-sm text-slate-700">
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="font-semibold text-[#0B1F3A] mb-3">SASとは</div>
-              <p className="leading-relaxed">
-                睡眠時無呼吸症候群（SAS）は、睡眠中に呼吸が繰り返し停止する病気です。主な症状として、いびき、日中の眠気、起床時の頭痛などがあります。
-              </p>
+      {/* Footer */}
+      <footer className="mt-16 border-t border-slate-200/70 pt-8 text-xs text-slate-500">
+        <div className="mx-auto max-w-5xl px-6 pb-24 md:pb-8">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
+            <div className="flex flex-col items-center gap-1 sm:items-start">
+              <p className="mb-1">本サイトは医療機関による情報提供を目的としています。</p>
+              <p>© {new Date().getFullYear()} SAS CPAP オンラインクリニック</p>
             </div>
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="font-semibold text-[#0B1F3A] mb-3">検査について</div>
-              <p className="leading-relaxed">
-                必要に応じて、自宅での簡易検査や医療機関での精密検査を検討します。検査結果に基づき、適切な治療方針をご提案します。
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-              <div className="font-semibold text-[#0B1F3A] mb-3">CPAP治療について</div>
-              <p className="leading-relaxed">
-                CPAP（Continuous Positive Airway Pressure）は、SASの代表的な治療法の一つです。就寝時にマスクを装着し、空気を送り込むことで気道を確保します。継続的な使用により、症状の改善が期待できます。
-              </p>
-            </div>
+            <a
+              href="/partners"
+              className="underline underline-offset-4 hover:text-slate-700"
+            >
+              機器代理店の方へ
+            </a>
           </div>
         </div>
-      </section>
+      </footer>
 
-      {/* Final CTA */}
-      <section className="border-t border-slate-100 bg-[#F4F7FA]">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm text-center">
-            <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAP継続フォロー・転院相談</h2>
-            <p className="mt-2 text-sm text-slate-700">
-              オンライン中心の診療で、通院負担を減らしながら継続フォローを行います
-            </p>
-            <div className="mt-8">
-              <a
-                href="#reserve"
-                className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
-              >
-                継続フォローの予約はこちら
-              </a>
-            </div>
-            <p className="mt-4 text-xs text-slate-500">
-              ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
-            </p>
-          </div>
+      {/* Mobile Fixed CTA */}
+      <div className={`fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden transition-transform duration-300 ${isPastHero ? 'translate-y-0' : 'translate-y-full'}`}>
+        <div className="mx-auto flex max-w-md gap-3">
+          <a
+            href="#reserve"
+            className="flex-1 rounded-xl bg-[#0B1F3A]/90 backdrop-blur py-3 text-center text-sm font-semibold text-white shadow-sm"
+          >
+            継続フォローの予約はこちら
+          </a>
+          <a
+            href="#eligibility"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-[#0B1F3A]"
+          >
+            対象確認
+          </a>
         </div>
-      </section>
-      
-<footer className="mt-16 border-t border-slate-200/70 pt-8 text-xs text-slate-500">
-  <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
-    <div className="flex flex-col items-center gap-1 sm:items-start">
-      <p className="mb-1">本サイトは医療機関による情報提供を目的としています。</p>
-      <p>© {new Date().getFullYear()} SAS CPAP オンラインクリニック</p>
-    </div>
-    <a
-      href="/partners"
-      className="underline underline-offset-4 hover:text-slate-700"
-    >
-      機器代理店の方へ
-    </a>
-  </div>
-</footer>
-
-    {/* Mobile Fixed CTA */}
-    <div className={`fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden transition-transform duration-300 ${isPastHero ? 'translate-y-0' : 'translate-y-full'}`}>
-      <div className="mx-auto flex max-w-md gap-3">
-        <a
-          href="#reserve"
-          className="flex-1 rounded-xl bg-[#0B1F3A]/90 backdrop-blur py-3 text-center text-sm font-semibold text-white shadow-sm"
-        >
-          継続フォローの予約はこちら
-        </a>
-        <a
-          href="#eligibility"
-          className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-[#0B1F3A]"
-        >
-          対象確認
-        </a>
       </div>
-    </div>
-
     </main>
   );
 }

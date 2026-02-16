@@ -10,9 +10,12 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "SAS CPAP オンラインクリニック | sas-cpap.jp",
+  title: "CPAP継続フォローのオンライン診療｜SAS CPAP オンラインクリニック",
   description:
-    "オンライン中心のCPAP継続フォロー外来。通院不要・転院OK。首都圏からのオンライン転院相談多数。全国のCPAP患者様に対応。",
+    "CPAP治療中（安定期）の方を対象に、医師が遠隔データを確認しながらオンライン中心で継続フォローを行います。初診後1ヶ月フォロー、安定後は約3ヶ月ごとの定期管理。必要時は対面医療機関をご案内します。",
+  alternates: {
+    canonical: "https://sas-cpap.jp/",
+  },
 };
 
 export default function RootLayout({
