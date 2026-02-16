@@ -55,113 +55,144 @@ export default function Home() {
         className="relative overflow-hidden bg-gradient-to-b from-[#F8FAFC] to-white"
         aria-label="メイン"
       >
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-24
-">
+        <div className="mx-auto max-w-5xl px-6 py-10 md:py-24">
           <div className="grid gap-8 md:grid-cols-[1.3fr_0.7fr] md:gap-12 md:items-start">
             <div className="text-center max-w-3xl mx-auto md:max-w-none md:mx-0">
-            <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
-              <span className="block">通院が難しい</span>
-              <span className="block">CPAP治療を継続中の方へ</span>
-              <span className="block mt-4 text-lg md:text-2xl">
-                <span className="font-semibold">医師が遠隔データを確認する</span>
-                <br className="hidden md:inline" /> オンライン中心の継続フォロー外来
-              </span>
-            </h1>
+              <h1 className="text-3xl font-bold tracking-tight text-[#0B1F3A] md:text-4xl">
+                <span className="block">通院が難しい</span>
+                <span className="block">CPAP治療を継続中の方へ</span>
+                <span className="block mt-4 text-lg md:text-2xl">
+                  <span className="font-semibold">医師が遠隔データを確認する</span>
+                  <br className="hidden md:inline" /> オンライン中心の継続フォロー外来
+                </span>
+              </h1>
 
-            <ul className="mt-6 space-y-2 text-sm sm:text-base text-slate-700 text-left max-w-fit mx-auto md:mx-0">
-              <li>✓ すでにCPAP治療を受けている方</li>
-              <li>✓ 症状が安定しており、定期フォローが中心の方</li>
-              <li>✓ 通院負担を減らしたい方</li>
-            </ul>
+              <ul className="mt-6 space-y-2 text-sm sm:text-base text-slate-700 text-left max-w-fit mx-auto md:mx-0">
+                <li>✓ すでにCPAP治療を受けている方</li>
+                <li>✓ 症状が安定しており、定期フォローが中心の方</li>
+                <li>✓ 通院負担を減らしたい方</li>
+              </ul>
 
-            <p className="mt-4 text-sm text-slate-700 leading-relaxed">
-              すでにCPAP治療を受けており、状態が安定している方を対象に、オンラインでの定期フォローを中心に診療を行います。3ヶ月ごとの定期フォローにも対応し、現在の機器のままご相談いただけます（医師の判断により、対面診療をご案内する場合があります）。
-            </p>
-
-            <div className="mt-8 grid gap-4 text-left md:grid-cols-3 md:items-stretch">
-              <div className="rounded-xl border border-slate-200/70 bg-white/70 p-5 h-full">
-                <div className="text-sm font-semibold text-slate-900">診療スタイル</div>
-                <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    状態が安定している方は、3ヶ月ごとの定期フォローにも対応
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    オンライン中心で通院負担を軽減
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    <span className="block">
-                      システム管理料などの追加費用は原則不要
-                      <span className="block text-xs text-slate-500 mt-0.5">※発生する場合は事前に明示します</span>
-                    </span>
-                  </li>
-                </ul>
+              {/* Mobile optimized mini badges */}
+              <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-2 text-xs font-medium text-[#0B1F3A]">
+                <span className="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1">
+                  ✓ 医師が確認
+                </span>
+                <span className="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1">
+                  ✓ 初回1ヶ月
+                </span>
+                <span className="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1">
+                  ✓ 3ヶ月ごと
+                </span>
               </div>
-              <div className="rounded-xl border border-slate-200/70 bg-white/70 p-5 h-full">
-                <div className="text-sm font-semibold text-slate-900">対象患者</div>
-                <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    現在CPAPをご使用中の方の転院にも対応
-                  </li>
-                </ul>
+
+              {/* CTA Area (Moved Up) */}
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center justify-center md:justify-start">
+                <a
+                  href="#reserve"
+                  className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
+                >
+                  継続フォローの予約はこちら
+                </a>
+                <a
+                  href="#eligibility"
+                  className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-center text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50 transition-colors"
+                >
+                  対象か確認する
+                </a>
               </div>
-              <div className="rounded-xl border border-slate-200/70 bg-white/70 p-5 h-full">
-                <div className="text-sm font-semibold text-slate-900">機器対応</div>
-                <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    各種CPAP機器対応
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0B1F3A]" />
-                    機器会社様との連携にも配慮し、継続使用を重視
-                  </li>
-                </ul>
+
+              {/* Quantitative Info Line */}
+              <p className="mt-3 text-xs text-slate-500 text-center md:text-left">
+                オンライン診察：目安10分｜初診後1ヶ月フォロー｜安定後は約3ヶ月ごと
+              </p>
+
+              {/* Shortened Description */}
+              <p className="mt-6 text-sm text-slate-700 leading-relaxed text-left">
+                CPAP治療中（安定期）の方を対象に、医師が遠隔データを確認しながらオンライン中心で継続フォローを行います。
+                初診後1ヶ月で再診し、安定後は約3ヶ月ごとの定期管理へ移行します。
+              </p>
+              <p className="mt-2 text-xs text-slate-500 text-left">
+                ※医学的判断により対面受診をご案内する場合があります。
+              </p>
+
+              {/* Details (Folded) */}
+              <details className="mt-4 text-left group">
+                <summary className="cursor-pointer text-xs font-medium text-slate-500 hover:text-slate-700 select-none flex items-center gap-1">
+                  <span className="group-open:rotate-90 transition-transform">
+                    ▶
+                  </span>
+                  診療方針の詳細・注意事項を見る
+                </summary>
+                <div className="mt-3 rounded-lg bg-slate-50 p-4 text-xs text-slate-600 space-y-2">
+                  <p>
+                    ・対面診療をご案内する場合：症状が不安定な場合や、対面での検査が必要と医師が判断した場合は、近隣の医療機関や提携クリニックをご案内します。
+                  </p>
+                  <p>
+                    ・システム管理料について：原則として追加費用はかかりませんが、発生する場合は事前に明示し、ご同意いただいた上で進めます。
+                  </p>
+                  <p>
+                    ・メール医療相談は不可：診療内容に関するご相談は、安全管理のためオンライン診察の時間内にて承っております。
+                  </p>
+                  <p>
+                    ・当院では、患者様の安全性と継続性を重視し、医学的判断に基づいたオンラインフォローを行っています。
+                  </p>
+                </div>
+              </details>
+
+              {/* Cards (Scrollable on mobile) */}
+              <div className="mt-8 flex gap-3 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:items-stretch md:overflow-visible md:pb-0 scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0">
+                {/* Card 1 */}
+                <div className="min-w-[160px] md:min-w-0 flex-1 rounded-xl border border-slate-200/70 bg-white/70 p-4 md:p-5 flex flex-col justify-center h-auto">
+                  <div className="text-xs md:text-sm font-semibold text-slate-900 mb-2">
+                    医師が遠隔データ確認
+                  </div>
+                  <ul className="space-y-1 text-xs text-slate-700">
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-[#0B1F3A]" />
+                      毎月のデータ確認
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-[#0B1F3A]" />
+                      治療継続をサポート
+                    </li>
+                  </ul>
+                </div>
+                {/* Card 2 */}
+                <div className="min-w-[160px] md:min-w-0 flex-1 rounded-xl border border-slate-200/70 bg-white/70 p-4 md:p-5 flex flex-col justify-center h-auto">
+                  <div className="text-xs md:text-sm font-semibold text-slate-900 mb-2">
+                    初回1ヶ月フォロー
+                  </div>
+                  <ul className="space-y-1 text-xs text-slate-700">
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-[#0B1F3A]" />
+                      導入・転院初期の確認
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-[#0B1F3A]" />
+                      安心して開始
+                    </li>
+                  </ul>
+                </div>
+                {/* Card 3 */}
+                <div className="min-w-[160px] md:min-w-0 flex-1 rounded-xl border border-slate-200/70 bg-white/70 p-4 md:p-5 flex flex-col justify-center h-auto">
+                  <div className="text-xs md:text-sm font-semibold text-slate-900 mb-2">
+                    安定後は約3ヶ月ごと
+                  </div>
+                  <ul className="space-y-1 text-xs text-slate-700">
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-[#0B1F3A]" />
+                      通院負担を軽減
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-[#0B1F3A]" />
+                      オンライン中心
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <p className="mt-8 text-xs font-bold text-slate-500">
-              完全予約制｜オンライン診療対応
-            </p>
-            <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#reserve"
-                className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
-              >
-                継続フォローの予約はこちら
-              </a>
-              <a
-                href="#eligibility"
-                className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-center text-sm font-semibold text-[#0B1F3A] shadow-sm hover:bg-slate-50 transition-colors"
-              >
-                対象か確認する（受診可否の相談）
-              </a>
-            </div>
-            <p className="mt-3 text-xs text-slate-500">
-              当院では、患者様の安全性と継続性を重視し、医学的判断に基づいたオンラインフォローを行っています。
-            </p>
-            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-600">
-              <span className="flex items-center gap-1">✓ 医師がデータを確認</span>
-              <span className="flex items-center gap-1">✓ 初回1ヶ月フォローあり</span>
-              <span className="flex items-center gap-1">✓ 現在の機器のまま相談可能</span>
-              <span className="flex items-center gap-1">✓ 完全オンライン中心</span>
-            </div>
-            <p className="mt-4 text-xs text-slate-500">
-              ※現在のCPAP機器のままご相談いただける場合があります
-            </p>
-            <p className="mt-1 text-xs text-slate-500">
-              ※診療前に費用の目安をご案内し、ご同意のうえで進めます
-            </p>
-            <p className="mt-3 text-xs text-slate-500">
-              ※現在CPAP治療中の方を主な対象とした継続フォロー外来です。
-            </p>
-            <p className="mt-1 text-xs text-slate-500">
-              ※診療内容のご相談はオンライン診察にて承っております（メールでの個別医療相談は行っていません）。
-            </p>
-            </div>
             <div className="space-y-6 flex flex-col">
               {/* Hero image (patient side) */}
               <div className="rounded-3xl border border-slate-200/70 bg-white shadow-md overflow-hidden">
@@ -171,7 +202,7 @@ export default function Home() {
                     alt="オンライン診療の様子（患者側）"
                     width={1200}
                     height={800}
-                    className="w-full h-[240px] md:h-[300px] object-[center_30%]"
+                    className="w-full h-[220px] md:h-[300px] object-cover object-[center_30%]"
                     priority
                   />
                   <div className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#0B1F3A] shadow">
@@ -185,43 +216,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex-1 rounded-xl border border-slate-200/70 bg-[#FAFBFC] p-5 shadow-sm">
-                <div className="text-sm font-semibold text-slate-900">遠隔モニタリングを活用し、</div>
+                <div className="text-sm font-semibold text-slate-900">
+                  遠隔モニタリングを活用し、
+                </div>
                 <p className="mt-1 text-sm text-slate-700 leading-relaxed">
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
                 </p>
               </div>
-              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
-                <div className="text-sm font-semibold text-slate-900">機器変更は必須ではありません</div>
-                <p className="mt-1 text-sm text-slate-700 leading-relaxed">
-                  現在ご使用中のCPAP機器のままご相談いただける場合があります。
-                </p>
-              </div>
-              <div className="flex-1 rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm">
-                <div className="text-sm font-semibold text-slate-900">CPAP通院の負担を減らしたい方へ</div>
-                <p className="mt-1 text-sm text-slate-700 leading-relaxed">
-                  状態が安定している方は、3ヶ月ごとの定期フォローにも対応しています。
-                </p>
-              </div>
-              <a
-                href="#eligibility"
-                className="mt-2 inline-flex items-center text-sm font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700"
-              >
-                受診対象か確認する
-              </a>
-              <a
-                href="#reserve"
-                className="mt-2 inline-flex items-center text-sm font-medium text-[#0B1F3A] underline underline-offset-4 hover:text-[#0a2847]"
-              >
-                継続フォローの予約はこちら
-              </a>
             </div>
-          </div>
-          <p className="mt-8 text-center text-xs text-slate-500">
-            初診後約1ヶ月フォロー｜安定後は約3ヶ月ごとの定期診療
-          </p>
-          <div className="mt-4 text-center text-xs text-slate-500 leading-relaxed space-y-1">
-            <p>当院では、オンライン診療の利便性と医療安全性のバランスを重視しています。</p>
-            <p>必要に応じて対面医療機関とも連携し、無理のない継続治療を目指します。</p>
           </div>
         </div>
       </section>
