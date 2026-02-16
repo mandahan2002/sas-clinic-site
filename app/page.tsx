@@ -1,6 +1,20 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [isPastHero, setIsPastHero] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsPastHero(window.scrollY > 500);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="min-h-screen bg-white text-[#171717] pb-20 md:pb-0">
       {/* Header */}
@@ -43,7 +57,7 @@ export default function Home() {
           </nav>
           <a
             href="#reserve"
-            className="rounded-xl bg-[#0B1F3A] px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#0a2847] transition-colors"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-[#0B1F3A] hover:bg-slate-50 transition-colors"
           >
             継続フォローの予約はこちら
           </a>
@@ -90,7 +104,7 @@ export default function Home() {
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center justify-center md:justify-start">
                 <a
                   href="#reserve"
-                  className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
+                  className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3.5 text-sm font-semibold tracking-wide text-white shadow-sm hover:bg-[#0a2847] transition-colors"
                 >
                   継続フォローの予約はこちら
                 </a>
@@ -833,11 +847,11 @@ export default function Home() {
 </footer>
 
     {/* Mobile Fixed CTA */}
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden">
+    <div className={`fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden transition-transform duration-300 ${isPastHero ? 'translate-y-0' : 'translate-y-full'}`}>
       <div className="mx-auto flex max-w-md gap-3">
         <a
           href="#reserve"
-          className="flex-1 rounded-xl bg-[#0B1F3A] py-3 text-center text-sm font-semibold text-white shadow-sm"
+          className="flex-1 rounded-xl bg-[#0B1F3A]/90 backdrop-blur py-3 text-center text-sm font-semibold text-white shadow-sm"
         >
           継続フォローの予約はこちら
         </a>
