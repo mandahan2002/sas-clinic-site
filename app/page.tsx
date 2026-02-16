@@ -343,6 +343,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Clinical Policy Statement */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              当院の診療方針（継続治療を安全に続けるために）
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+              当院は「CPAP治療を継続している方の定期フォロー」を中心に、オンライン診療の利便性と医療安全性の両立を重視しています。
+              オンライン診療で適切な評価が難しいと医師が判断した場合は、対面診療や地域医療機関の受診をご案内します。
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                { t:"安全性優先", d:"オンラインで完結することより、医学的に安全な判断を優先します。" },
+                { t:"継続性重視", d:"通院負担に配慮し、無理なく続けられるフォローを目指します。" },
+                { t:"透明性", d:"費用・流れ・必要書類は事前に目安を提示し、同意の上で進めます。" },
+              ].map((x,i)=>(
+                <div key={i} className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                  <div className="text-sm font-semibold text-[#0B1F3A]">{x.t}</div>
+                  <p className="mt-3 text-sm text-slate-700 leading-relaxed">{x.d}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-xs text-slate-500">
+              ※本ページは一般的な情報提供であり、診断・治療効果を保証するものではありません。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* H2: CPAP継続フォローとは（SEO強化・医療説明） */}
       <section className="bg-white border-t border-slate-100">
         <div className="mx-auto max-w-5xl px-6 py-14">
@@ -579,7 +611,7 @@ export default function Home() {
               href="#reserve"
               className="inline-block rounded-xl bg-[#0B1F3A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2847] transition-colors"
             >
-              転院の相談・予約はこちら
+              継続フォローの予約はこちら
             </a>
           </div>
         </div>
@@ -801,6 +833,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Transparency Metrics */}
+      <section className="border-t border-slate-100 bg-[#F8FAFC]">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">診療の目安（透明性）</h2>
+          <p className="mt-3 text-sm text-slate-700">
+            受診前にイメージが持てるよう、目安を提示します（個別状況により変動します）。
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              { t:"診察時間の目安", v:"約10分", s:"※内容により前後します" },
+              { t:"フォロー間隔の目安", v:"初回1ヶ月 → 安定後3ヶ月", s:"※医師が判断します" },
+              { t:"必要アップロード（最小）", v:"保険情報＋任意書類", s:"※詳細は予約画面で案内" },
+            ].map((x,i)=>(
+              <div key={i} className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">{x.t}</div>
+                <div className="mt-3 text-2xl font-bold text-slate-900">{x.v}</div>
+                <div className="mt-2 text-xs text-slate-500">{x.s}</div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-xs text-slate-500">
+            ※オンライン診療料等の算定可否や費用は、症状・診療内容により異なります。診療前に目安をご案内し同意のうえで進めます。
+          </p>
+        </div>
+      </section>
+
       {/* H2: よくある質問（FAQ） */}
       <section id="faq" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
@@ -830,6 +890,10 @@ export default function Home() {
               {
                 q: "診察時間はどれくらいですか？",
                 a: "オンライン診察自体は通常10分程度で終了します。通院や待ち時間の負担なく、効率的に受診いただけます。",
+              },
+              {
+                q:"運転の多い職種（業務運転など）でも受診できますか？",
+                a:"職種や安全配慮の観点から、フォロー間隔が短くなる場合があります。具体的な間隔や対応可否は、診察時に医師が状況を確認して判断します。"
               },
               {
                 q: "対面受診が必要になるのはどんな時ですか？",
@@ -877,6 +941,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pre-Reservation Safety Block */}
+      <section className="border-t border-slate-100 bg-[#F8FAFC]">
+        <div className="mx-auto max-w-5xl px-6 py-12">
+          <div className="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-bold text-[#0B1F3A] md:text-xl">
+              ご予約前にご確認ください
+            </h2>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  t:"現在の機器のまま相談可能",
+                  d:"多くの場合、現在のCPAP機器のままご相談いただけます（個別状況によります）。",
+                },
+                {
+                  t:"医師が遠隔データを確認",
+                  d:"オンラインでも医師が状態を確認し、必要に応じて対面受診をご案内します。",
+                },
+                {
+                  t:"いきなり転院を急がせません",
+                  d:"初回は状況確認が中心です。転院手続きは医師判断の後でも問題ありません。",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-slate-100 bg-white p-5"
+                >
+                  <div className="text-sm font-semibold text-[#0B1F3A]">
+                    {item.t}
+                  </div>
+                  <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                    {item.d}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-xs text-slate-500">
+              ※診療内容や適応は医師が診察のうえ判断します。オンライン診療が適さない場合は、対面医療機関をご案内することがあります。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Reserve */}
       <section id="reserve" className="border-t border-slate-100 bg-white scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
@@ -918,6 +1026,28 @@ export default function Home() {
       {/* Access / Legal */}
       <section id="access" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
+          
+          {/* Trust Without Reviews */}
+          <section className="mb-14 border-b border-slate-200 pb-14">
+            <h2 className="text-2xl font-bold text-[#0B1F3A]">安心のための取り組み</h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {[
+                { t:"医師が診療を担当", d:"医療判断は医師が行い、必要時は対面医療機関をご案内します。" },
+                { t:"適応外を明示", d:"オンラインに適さないケースは受診をご案内しません（安全性優先）。" },
+                { t:"費用の目安提示", d:"診療前に費用の目安を案内し、同意の上で進めます。" },
+                { t:"書類負担を最小化", d:"必須アップロードは最小限とし、離脱を防ぎつつ安全に運用します。" },
+              ].map((x,i)=>(
+                <div key={i} className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+                  <div className="text-sm font-semibold text-[#0B1F3A]">{x.t}</div>
+                  <p className="mt-2 text-sm text-slate-700 leading-relaxed">{x.d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-xs text-slate-500">
+              ※当院は広告目的の口コミ依頼は行いません。医療の質は個別状況により異なります。
+            </p>
+          </section>
+
           <h2 className="text-2xl font-bold text-[#0B1F3A]">クリニックについて</h2>
           <p className="mt-2 text-sm text-slate-700">
             医療広告上の基本情報を明示します（地図・内観写真の掲載は任意です）。
