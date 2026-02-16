@@ -275,6 +275,19 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
+
+              {/* SEO Internal Links (New Pages) */}
+              <div className="mt-8 flex flex-col gap-3 text-xs text-slate-500 md:flex-row md:gap-6 md:justify-start border-t border-slate-200/50 pt-4">
+                <a href="/cpap-transfer" className="hover:text-slate-800 underline underline-offset-4 flex items-center gap-1">
+                  CPAP転院について詳しく見る <span className="text-slate-400">→</span>
+                </a>
+                <a href="/cpap-follow" className="hover:text-slate-800 underline underline-offset-4 flex items-center gap-1">
+                  CPAP継続フォローの仕組み <span className="text-slate-400">→</span>
+                </a>
+                <a href="/online-cpap" className="hover:text-slate-800 underline underline-offset-4 flex items-center gap-1">
+                  オンライン診療の対象について <span className="text-slate-400">→</span>
+                </a>
+              </div>
             </div>
 
             <div className="space-y-6 flex flex-col">
@@ -371,7 +384,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* H2: CPAPの転院をご検討の方へ */}
+      {/* H2: 医療体制について */}
+      <section className="border-t border-slate-100 bg-[#F8FAFC]">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl font-bold text-[#0B1F3A]">医療体制について</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+            当院では、オンライン診療であっても対面診療と同等の医療安全性を確保するため、以下のような体制を整えています。
+            レビューや口コミに頼るのではなく、仕組みとしての「医療の質」を重視しています。
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-blue-50 p-2 rounded-lg text-[#0B1F3A]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-[#0B1F3A]">医師が遠隔データ確認</h3>
+              </div>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                毎月のCPAP使用状況やAHI（無呼吸低呼吸指数）のデータを、医師が必ず確認しています。
+                異常値が見られた場合は、定期受診を待たずにご連絡し、早期対応を行います。
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-blue-50 p-2 rounded-lg text-[#0B1F3A]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0h18M5.25 12h13.5h-13.5zm1.5 8.625a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-[#0B1F3A]">初回1ヶ月フォロー</h3>
+              </div>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                初診から1ヶ月後に必ず再診を行い、治療の適合性や体調変化をチェックします。
+                導入初期や転院直後の不安を解消し、軌道に乗るまで丁寧にサポートします。
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-blue-50 p-2 rounded-lg text-[#0B1F3A]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                  </svg>
+                </div>
+                <h3 className="font-bold text-[#0B1F3A]">必要時は対面案内</h3>
+              </div>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                オンライン診療の限界を理解し、無理な継続は行いません。
+                症状が不安定な場合や詳細な検査が必要な場合は、速やかに適切な対面医療機関をご案内します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="transfer" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAPの転院をご検討の方へ</h2>
