@@ -254,6 +254,45 @@ https://sas-cpap.jp
         </div>
       </section>
 
+      {/* Partner Safety Design */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              医療安全への取り組み（代理店様向け）
+            </h2>
+
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+              オンライン中心の継続フォローでも医療安全を重視し、
+              患者様には診療データのサマリーをお渡しする設計としています。
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">逆紹介しやすい設計</div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  地域医療機関受診時にも診療経過を共有しやすい構造です。
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">業務負担を増やさない</div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  医療判断は医師側が担い、既存の機器サポート体制を尊重します。
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">地域医療との共存</div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  完全オンラインでも地域医療との連携を前提とした設計です。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Role Division */}
       <section className="border-t border-slate-100 bg-white py-16 scroll-mt-24" id="roles">
         <div className="mx-auto max-w-5xl px-6">

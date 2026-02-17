@@ -812,6 +812,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Patient Safety Summary */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              万が一の際も安心できる診療サマリー
+            </h2>
+
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+              当院ではオンライン中心の診療でも安心して継続いただけるよう、
+              定期診療時にCPAPの使用データや診療経過を
+              患者様ご自身で保管できる形でご案内しています。
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">自分のデータをいつでも確認</div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  CPAPの使用状況や診療内容を、必要に応じて確認できる形でお渡ししています。
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">近隣医療機関への受診時にも活用可能</div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  症状変化などがあった場合、地域の医療機関を受診する際の参考資料としてご利用いただけます。
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">オンラインでも安心の安全設計</div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  万が一の際にもスムーズに医療連携ができるようサポートしています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* H2: オンライン診療でできること・できないこと */}
       <section className="border-t border-slate-100 bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14">
