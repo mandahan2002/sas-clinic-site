@@ -617,29 +617,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* H2: オンライン診療でできること・できないこと */}
-      <section className="border-t border-slate-100 bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-14">
-          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
-              オンライン診療でできること・できないこと
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
-              オンライン診療は利便性が高い一方、触診や聴診、対面での検査ができません。症状が不安定な場合や、緊急性が高いと判断される場合は、安全のために近隣の対面医療機関への受診をお願いすることがあります。患者様の健康を最優先に考え、医学的な判断に基づいた適切な受診方法をご提案します。
-            </p>
-            
-            <div className="mt-6">
-              <h3 className="text-sm font-bold text-[#0B1F3A] mb-2">当院で対応が難しいケース</h3>
-              <ul className="list-disc space-y-2 pl-5 text-sm text-slate-700">
-                <li>CPAP導入直後で状態が不安定な場合</li>
-                <li>強い眠気や症状の急な悪化がある場合</li>
-                <li>重篤な合併症が疑われる場合</li>
-                <li>医師が対面診察が必要と判断した場合</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Medical Safety Policy */}
       <section className="border-t border-slate-100 bg-white">
@@ -787,6 +765,72 @@ export default function Home() {
                 治療データを確認しながら、オンラインで継続サポートします。<br />
                 転院相談だけでも可能です。
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safety System */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              オンライン診療における安全体制
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+              当院ではオンライン中心の診療を行っていますが、
+              医師の医学的判断により対面診療が必要と考えられる場合には、
+              お住まいの地域の医療機関への受診をご案内しています。
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">
+                  必要時は紹介状作成
+                </div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  医療連携を大切にし、必要に応じて紹介状の作成にも対応しています。
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">
+                  地域医療機関との連携
+                </div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  症状変化や検査が必要な場合には、適切な医療機関をご案内します。
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
+                <div className="text-sm font-semibold text-[#0B1F3A]">
+                  緊急時の受診先確認
+                </div>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  安全な診療のため、初診時に緊急時の受診先を確認させていただく場合があります。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* H2: オンライン診療でできること・できないこと */}
+      <section className="border-t border-slate-100 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#0B1F3A] md:text-2xl">
+              オンライン診療でできること・できないこと
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
+              オンライン診療は利便性が高い一方、触診や聴診、対面での検査ができません。症状が不安定な場合や、緊急性が高いと判断される場合は、安全のために近隣の対面医療機関への受診をお願いすることがあります。患者様の健康を最優先に考え、医学的な判断に基づいた適切な受診方法をご提案します。
+            </p>
+            
+            <div className="mt-6">
+              <h3 className="text-sm font-bold text-[#0B1F3A] mb-2">当院で対応が難しいケース</h3>
+              <ul className="list-disc space-y-2 pl-5 text-sm text-slate-700">
+                <li>CPAP導入直後で状態が不安定な場合</li>
+                <li>強い眠気や症状の急な悪化がある場合</li>
+                <li>重篤な合併症が疑われる場合</li>
+                <li>医師が対面診察が必要と判断した場合</li>
+              </ul>
             </div>
           </div>
         </div>
