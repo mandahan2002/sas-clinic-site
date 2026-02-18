@@ -780,6 +780,7 @@ export default function Home() {
           <p className="mt-3 text-slate-600 leading-relaxed">
             現在CPAP治療中の方も、オンラインでスムーズに転院できます。
             面倒な手続きはできる限り当院と提携業者がサポートします。
+            現在お使いのCPAP機器をそのまま継続できる場合があります。
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-4">
@@ -787,7 +788,7 @@ export default function Home() {
             <div className="rounded-xl bg-white p-5 border border-slate-200">
               <div className="text-sm font-semibold text-[#0B1F3A]">STEP 1</div>
               <p className="mt-2 text-sm text-slate-700">
-                LPからオンライン予約。現在の機器やマスクが分かればご入力ください。
+                ホームページからオンライン予約。現在の機器やマスクが分かればご入力ください。
               </p>
             </div>
 
@@ -801,14 +802,14 @@ export default function Home() {
             <div className="rounded-xl bg-white p-5 border border-slate-200">
               <div className="text-sm font-semibold text-[#0B1F3A]">STEP 3</div>
               <p className="mt-2 text-sm text-slate-700">
-                新しい機器がご自宅へ届きます。箱に返送用伝票が同封されています。
+                現在お使いの機器や設定を確認し、そのまま継続できる場合は同じ環境でご利用いただけます。必要な場合のみ、新しい機器をご自宅へお届けします。
               </p>
             </div>
 
             <div className="rounded-xl bg-white p-5 border border-slate-200">
               <div className="text-sm font-semibold text-[#0B1F3A]">STEP 4</div>
               <p className="mt-2 text-sm text-slate-700">
-                これまでの機器を箱に入れて返送するだけで手続き完了です。
+                機器の返送が必要な場合は、箱に入れて送るだけで完了できるようサポートします。（同じ機器を継続できる場合は返送不要です）
               </p>
             </div>
 
