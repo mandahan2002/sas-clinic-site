@@ -240,7 +240,7 @@ export default function Home() {
 
               {/* Internal Links (SEO & Navigation) */}
               <div className="mt-4 hidden md:flex gap-4 text-xs font-medium text-slate-500 underline underline-offset-4">
-                 <a href="#transfer-flow" className="hover:text-slate-800">転院の方はこちら</a>
+                 <a href="#transfer-steps" className="hover:text-slate-800">転院の方はこちら</a>
                  <a href="#faq" className="hover:text-slate-800">よくある質問</a>
               </div>
 
@@ -492,10 +492,70 @@ export default function Home() {
             </p>
 
             {/* 比較表 (New) */}
-            <p className="mb-2 text-xs text-slate-400 md:hidden">
-              ← 横スクロールできます →
-            </p>
-            <div className="mt-8 relative overflow-hidden rounded-xl border border-slate-200 overflow-x-auto">
+            
+            {/* Mobile Cards (md:hidden) */}
+            <div className="mt-8 space-y-4 md:hidden">
+              {[
+                {
+                  title: "通院時間",
+                  traditional: "往復1〜2時間程度",
+                  online: "移動時間ほぼ不要",
+                  onlineSub: "（自宅・外出先から）"
+                },
+                {
+                  title: "待ち時間",
+                  traditional: "待合室での待機あり",
+                  online: "LINEで順番呼び出し"
+                },
+                {
+                  title: "診察時間",
+                  traditional: "対面で数分程度の確認",
+                  online: "データ確認を中心に効率よく診察"
+                },
+                {
+                  title: "仕事への影響",
+                  traditional: "通院のため時間調整が必要",
+                  online: "夜間・土曜など柔軟に受診可能"
+                },
+                {
+                  title: "コスト",
+                  traditional: "交通費・移動時間が必要",
+                  online: "移動にかかる費用なし"
+                },
+                {
+                  title: "CPAPデータ確認",
+                  traditional: "診察時のみ確認されることが多い",
+                  online: "毎月データを確認し、変化があればご連絡"
+                }
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                  <h3 className="font-bold text-slate-900 mb-3">{item.title}</h3>
+                  <div className="space-y-3">
+                    {/* Traditional */}
+                    <div className="rounded-lg bg-slate-50 p-3 text-sm text-slate-600">
+                      <div className="text-xs font-semibold text-slate-500 mb-1">従来の通院（対面）</div>
+                      <div>{item.traditional}</div>
+                    </div>
+                    {/* Online */}
+                    <div className="rounded-lg bg-white border border-[#0B1F3A]/30 p-3 text-sm relative">
+                      <div className="flex items-center justify-between mb-1">
+                        <div className="text-xs font-semibold text-[#0B1F3A]">当院（オンライン）</div>
+                        <span className="inline-flex rounded-full bg-[#0B1F3A]/5 text-[#0B1F3A] text-[11px] font-semibold px-2 py-0.5">
+                          おすすめ
+                        </span>
+                      </div>
+                      <div className="font-bold text-[#0B1F3A]">
+                        {item.online}
+                        {item.onlineSub && <span className="block text-xs font-normal text-slate-600 mt-0.5">{item.onlineSub}</span>}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop Table (hidden md:block) */}
+            <div className="mt-8 hidden md:block relative overflow-hidden rounded-xl border border-slate-200 overflow-x-auto">
               <table className="min-w-full text-sm text-left text-slate-700">
                 <thead className="bg-slate-50 text-xs text-slate-700 font-semibold border-b border-slate-200">
                   <tr>
@@ -540,7 +600,6 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
-              <div className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-white to-transparent md:hidden" />
             </div>
 
             {/* Eligibility Check (Integrated here) */}
@@ -576,8 +635,8 @@ export default function Home() {
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-50 p-2 rounded-lg text-[#0B1F3A]">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
@@ -591,8 +650,8 @@ export default function Home() {
 
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-50 p-2 rounded-lg text-[#0B1F3A]">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0h18M5.25 12h13.5h-13.5zm1.5 8.625a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
                   </svg>
                 </div>
@@ -606,8 +665,8 @@ export default function Home() {
 
             <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-50 p-2 rounded-lg text-[#0B1F3A]">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A]">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                   </svg>
                 </div>
@@ -617,6 +676,26 @@ export default function Home() {
                 オンライン診療の限界を理解し、無理な継続は行いません。
                 症状が不安定な場合や詳細な検査が必要な場合は、速やかに適切な対面医療機関をご案内します。
               </p>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-slate-100 bg-[#F8FAFC] p-6">
+            <div className="flex items-start gap-4">
+              <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A] shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <span className="inline-flex items-center rounded-full bg-[#0B1F3A]/5 text-[#0B1F3A] text-xs font-semibold px-3 py-1 mb-2">
+                  医療法・オンライン診療指針に配慮
+                </span>
+                <p className="text-sm leading-relaxed text-slate-600">
+                  オンライン診療は、厚生労働省の指針に基づき運用しています。<br className="hidden md:inline" />
+                  医療広告ガイドラインおよび関連法令を遵守し、<br className="hidden md:inline" />
+                  安全性と透明性を重視した診療体制を整えています。
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -687,7 +766,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="transfer-flow" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
+      <section id="transfer-steps" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAPの転院をご検討の方へ</h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
@@ -825,8 +904,8 @@ export default function Home() {
 
             {/* STEP 1 */}
             <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center h-full">
-              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A] mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A] mx-auto mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0h18M5.25 12h13.5h-13.5zm1.5 8.625a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
                 </svg>
               </div>
@@ -839,8 +918,8 @@ export default function Home() {
 
             {/* STEP 2 */}
             <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center h-full">
-              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A] mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A] mx-auto mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
               </div>
@@ -853,8 +932,8 @@ export default function Home() {
 
             {/* STEP 3 */}
             <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center h-full">
-              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A] mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A] mx-auto mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                 </svg>
               </div>
@@ -867,8 +946,8 @@ export default function Home() {
 
             {/* STEP 4 */}
             <div className="relative bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col items-center text-center h-full">
-              <div className="w-12 h-12 rounded-full bg-[#0B1F3A]/5 flex items-center justify-center mb-4 text-[#0B1F3A] mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <div className="bg-blue-50 p-2.5 rounded-full text-[#0B1F3A] mx-auto mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                 </svg>
               </div>
@@ -883,7 +962,7 @@ export default function Home() {
       </section>
 
       {/* H2: CPAP転院の流れ */}
-      <section id="transfer-steps" className="bg-slate-50 border-y border-slate-100 scroll-mt-24">
+      <section id="transfer-process" className="bg-slate-50 border-y border-slate-100 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-semibold text-[#0B1F3A]">
             CPAP転院の流れ
