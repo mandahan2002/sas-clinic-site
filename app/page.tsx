@@ -4,15 +4,27 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [isPastHero, setIsPastHero] = useState(false);
+  const [showFloatingCta, setShowFloatingCta] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsPastHero(window.scrollY > 500);
-    };
+    const el = document.querySelector("#after-transfer-flow");
+    if (!el) return;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // 転院フローを読み終えたら（画面に入ったらではなく、通り過ぎたら）CTA表示
+        // isIntersectingがfalse かつ boundingClientRect.topが負（画面より上にある）場合
+        setShowFloatingCta(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: "0px",
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   // Medical Organization Data for Structured Data (JSON-LD)
@@ -33,7 +45,8 @@ export default function Home() {
     "physician": {
       "@type": "Physician",
       "name": "廣瀬 有紀子"
-    }
+    },
+    "url": "https://sas-cpap.jp"
   };
 
   // FAQ Data for Structured Data (JSON-LD)
@@ -43,49 +56,77 @@ export default function Home() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "CPAP転院に紹介状は必要ですか？",
+        "name": "転院するとCPAP機器は必ず変わりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "紹介状がなくてもご相談いただける場合があります。これまでの検査結果や診療情報をお持ちいただくと、よりスムーズな診療が可能です。"
+          "text": "現在お使いの機器や契約状況により異なります。同じ機器・設定・マスクのまま継続できる場合もあります。詳細は診察時に確認します。"
         }
       },
       {
         "@type": "Question",
-        "name": "今の機器のまま使える？",
+        "name": "紹介状は必須ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、多くのメーカーの機器に対応しておりますので、現在の機器を継続してご使用いただける場合がほとんどです。予約時にメーカー名や機種名をお知らせください。"
+          "text": "状況により異なります。可能であればご用意いただくとスムーズですが、難しい場合もご相談ください。"
         }
       },
       {
         "@type": "Question",
-        "name": "オンラインだけで大丈夫？",
+        "name": "診療は毎月受ける必要がありますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "基本的にはオンラインで完結しますが、症状が不安定な場合や、医師が対面での検査が必要と判断した場合には、近隣の医療機関をご案内することがあります。"
+          "text": "安定してご使用いただけている場合は、3ヶ月に1回程度の受診で継続可能なケースがあります。診療頻度は症状や使用状況により調整します。"
         }
       },
       {
         "@type": "Question",
-        "name": "眠気が強い場合は？",
+        "name": "医師コメント付きサマリーはどうやって見られますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "CPAP治療中でも眠気が強い場合は、治療圧の調整や他の睡眠障害の合併が考えられます。オンライン診察にて状況を詳細に伺い、適切な対応をご提案します。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "保険診療ですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "はい、当院の診療は原則として保険診療となります。受診時には必ず健康保険証（またはマイナ保険証）をご用意ください。"
+          "text": "診療サマリーはマイページ等から確認できる運用を予定しています。必要なときにダウンロードしてご利用いただけます。"
         }
       }
     ]
   };
 
+  // Medical WebPage Data for Structured Data (JSON-LD)
+  const medicalWebPageStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "CPAP継続フォロー外来",
+    "description": "睡眠時無呼吸症候群（SAS）のCPAP治療を継続中の方を対象としたオンライン診療・継続フォロー外来です。",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "睡眠時無呼吸症候群(SAS)",
+      "alternateName": "Sleep Apnea Syndrome"
+    },
+    "audience": {
+      "@type": "MedicalAudience",
+      "audienceType": "CPAP治療中の方"
+    },
+    "specialty": "Sleep Medicine"
+  };
+
   return (
     <main className="min-h-screen bg-white text-[#171717] pb-20 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(medicalOrgStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(medicalWebPageStructuredData),
+        }}
+      />
       {/* Header */}
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-5xl items-start justify-between px-6 py-4">
@@ -848,6 +889,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trigger for Floating CTA */}
+      <div id="after-transfer-flow" className="h-px w-full pointer-events-none" />
+
       {/* Reason for Safe Continuation */}
       <section className="border-t border-slate-100 bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14">
@@ -1389,7 +1433,7 @@ export default function Home() {
       </footer>
 
       {/* Mobile Fixed CTA */}
-      <div className={`fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden transition-transform duration-300 ${isPastHero ? 'translate-y-0' : 'translate-y-full'}`}>
+      <div className={`fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden transition-transform duration-300 ${showFloatingCta ? 'translate-y-0' : 'translate-y-full'}`}>
         <div className="mx-auto flex max-w-md gap-3">
           <a
             href="#reserve"
