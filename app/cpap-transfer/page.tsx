@@ -116,7 +116,7 @@ export default function CPAPTransferPage() {
         <div className="mt-16 border-t border-slate-200 pt-8">
           <h3 className="text-sm font-bold text-slate-900 mb-2">SAS CPAP オンラインクリニック</h3>
           <p className="text-xs text-slate-500 mb-1">
-            東京都渋谷区代々木2丁目23-1 ニューステートメナー 1226
+            東京都渋谷区代々木2丁目23-1
           </p>
           <div className="mt-6">
             <a href="/" className="text-sm text-[#0B1F3A] underline underline-offset-4 hover:text-slate-600">
