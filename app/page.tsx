@@ -399,31 +399,58 @@ export default function Home() {
               当院では、CPAP治療が安定している方を対象に、通院の負担を軽減するオンライン診療を行っています。毎月のデータは医師が遠隔で確認し、3ヶ月に1回の定期受診で経過をフォローします。対面での検査が必要な場合は、適切な医療機関をご案内する安全な体制を整えています。忙しい方でも無理なく治療を継続できる環境を提供します。
             </p>
             
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              {[
-                {
-                  t: "医師が遠隔データ確認",
-                  d: "毎月のCPAP使用状況やデータを医師が定期的に確認し、治療の継続をサポートします。",
-                },
-                {
-                  t: "初回1ヶ月フォロー",
-                  d: "初診から約1ヶ月後に再診を行い、状態が安定している場合は約3ヶ月ごとの定期管理に移行します。",
-                },
-                {
-                  t: "必要時は対面医療へ連携",
-                  d: "症状の変化や対面での検査が必要と判断された場合は、速やかに適切な医療機関をご案内します。",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-slate-100 bg-[#F8FAFC] p-5 shadow-sm"
-                >
-                  <div className="text-sm font-semibold text-[#0B1F3A]">{item.t}</div>
-                  <div className="mt-3 text-sm text-slate-700 leading-relaxed">
-                    {item.d}
-                  </div>
-                </div>
-              ))}
+            <p className="mt-10 text-slate-600 leading-relaxed">
+              「通院の時間が大変」「待ち時間が長い」と感じて、
+              オンラインでのCPAP継続フォローを選ばれる方が増えています。
+              従来の通院と、オンラインでのフォローの違いを分かりやすくまとめました。
+            </p>
+
+            {/* 比較表 (New) */}
+            <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 overflow-x-auto">
+              <table className="min-w-full text-sm text-left text-slate-700">
+                <thead className="bg-slate-50 text-xs text-slate-700 font-semibold border-b border-slate-200">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 whitespace-nowrap w-[20%]">CPAP継続フォローの比較</th>
+                    <th scope="col" className="px-4 py-3 whitespace-nowrap w-[40%]">従来の通院（対面）</th>
+                    <th scope="col" className="px-4 py-3 whitespace-nowrap bg-[#0B1F3A]/5 text-[#0B1F3A] w-[40%]">当院（オンライン）</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr className="bg-white">
+                    <th scope="row" className="px-4 py-3 font-medium text-slate-900 whitespace-nowrap">通院時間</th>
+                    <td className="px-4 py-3">往復1〜2時間程度</td>
+                    <td className="px-4 py-3 bg-[#0B1F3A]/5 font-semibold text-[#0B1F3A]">
+                      移動時間ほぼ不要
+                      <span className="block text-xs font-normal text-slate-600 mt-0.5">（自宅・外出先から）</span>
+                    </td>
+                  </tr>
+                  <tr className="bg-white">
+                    <th scope="row" className="px-4 py-3 font-medium text-slate-900 whitespace-nowrap">待ち時間</th>
+                    <td className="px-4 py-3">待合室での待機あり</td>
+                    <td className="px-4 py-3 bg-[#0B1F3A]/5 font-semibold text-[#0B1F3A]">LINEで順番呼び出し</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <th scope="row" className="px-4 py-3 font-medium text-slate-900 whitespace-nowrap">診察時間</th>
+                    <td className="px-4 py-3">対面で数分程度の確認</td>
+                    <td className="px-4 py-3 bg-[#0B1F3A]/5 font-semibold text-[#0B1F3A]">データ確認を中心に効率よく診察</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <th scope="row" className="px-4 py-3 font-medium text-slate-900 whitespace-nowrap">仕事への影響</th>
+                    <td className="px-4 py-3">通院のため時間調整が必要</td>
+                    <td className="px-4 py-3 bg-[#0B1F3A]/5 font-semibold text-[#0B1F3A]">夜間・土曜など柔軟に受診可能</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <th scope="row" className="px-4 py-3 font-medium text-slate-900 whitespace-nowrap">コスト</th>
+                    <td className="px-4 py-3">交通費・移動時間が必要</td>
+                    <td className="px-4 py-3 bg-[#0B1F3A]/5 font-semibold text-[#0B1F3A]">移動にかかる費用なし</td>
+                  </tr>
+                  <tr className="bg-white">
+                    <th scope="row" className="px-4 py-3 font-medium text-slate-900 whitespace-nowrap">CPAPデータ確認</th>
+                    <td className="px-4 py-3">診察時のみ確認されることが多い</td>
+                    <td className="px-4 py-3 bg-[#0B1F3A]/5 font-semibold text-[#0B1F3A]">毎月データを確認し、変化があればご連絡</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             {/* Eligibility Check (Integrated here) */}
