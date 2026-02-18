@@ -11,22 +11,22 @@ export default function Home() {
     const elComparison = document.querySelector("#comparison");
     const elTransfer = document.querySelector("#after-transfer-flow");
 
+    let obsMini: IntersectionObserver | null = null;
+    let obsMain: IntersectionObserver | null = null;
+
     // 比較表が見えたら「小CTA」を表示
     if (elComparison) {
-      const obsMini = new IntersectionObserver(
+      obsMini = new IntersectionObserver(
         ([entry]) => setShowMiniCta(entry.isIntersecting),
         { threshold: 0.15, rootMargin: "0px 0px -30% 0px" }
       );
       obsMini.observe(elComparison);
-
-      // cleanup用に保持
-      (window as any).__obsMiniCta = obsMini;
     }
 
     // 転院フローを読み終える（or 見えた）タイミングで「本CTA」を表示
     if (elTransfer) {
-      const obsMain = new IntersectionObserver(
-        ([entry]) => setShowMainCta(!entry.isIntersecting && entry.boundingClientRect.top < 0),
+      obsMain = new IntersectionObserver(
+        ([entry]) => setShowMainCta(entry.isIntersecting),
         {
           root: null,
           threshold: 0,
@@ -34,16 +34,11 @@ export default function Home() {
         }
       );
       obsMain.observe(elTransfer);
-      (window as any).__obsMainCta = obsMain;
     }
 
     return () => {
-      const obsMini = (window as any).__obsMiniCta as IntersectionObserver | undefined;
-      const obsMain = (window as any).__obsMainCta as IntersectionObserver | undefined;
       obsMini?.disconnect();
       obsMain?.disconnect();
-      delete (window as any).__obsMiniCta;
-      delete (window as any).__obsMainCta;
     };
   }, []);
 
@@ -169,7 +164,7 @@ export default function Home() {
             </div>
           </div>
           <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
-            <a href="#transfer-flow" className="hover:text-slate-900 transition-colors">
+            <a href="#transfer-steps" className="hover:text-slate-900 transition-colors">
               転院について
             </a>
             <a href="#services" className="hover:text-slate-900 transition-colors">
@@ -267,7 +262,7 @@ export default function Home() {
               
               {/* Mobile Only Link */}
               <div className="mt-3 md:hidden text-center">
-                <a href="#transfer-flow" className="text-xs text-slate-500 underline underline-offset-4">転院の方はこちら</a>
+                <a href="#transfer-steps" className="text-xs text-slate-500 underline underline-offset-4">転院の方はこちら</a>
               </div>
 
               {/* Quantitative Info Line */}
@@ -888,7 +883,7 @@ export default function Home() {
       </section>
 
       {/* H2: CPAP転院の流れ */}
-      <section id="transfer-flow" className="bg-slate-50 border-y border-slate-100">
+      <section id="transfer-steps" className="bg-slate-50 border-y border-slate-100 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-semibold text-[#0B1F3A]">
             CPAP転院の流れ
@@ -1253,16 +1248,6 @@ export default function Home() {
               </details>
             ))}
           </div>
-          
-          {/* JSON-LD Script */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalOrgStructuredData) }}
-          />
         </div>
       </section>
 
