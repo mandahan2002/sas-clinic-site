@@ -27,8 +27,8 @@ export default function PartnersPage() {
           <div className="flex items-center gap-3">
             <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
               <Image
-                src="/logo.png"
-                alt="SAS CPAP オンラインクリニック ロゴ"
+          src="/logo.webp"
+          alt="SAS CPAP オンラインクリニック ロゴ"
                 width={48}
                 height={48}
                 className="h-10 w-10 md:h-12 md:w-12 rounded-xl border border-slate-200 bg-white p-1 object-contain"

@@ -4,27 +4,47 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [showFloatingCta, setShowFloatingCta] = useState(false);
+  const [showMiniCta, setShowMiniCta] = useState(false);
+  const [showMainCta, setShowMainCta] = useState(false);
 
   useEffect(() => {
-    const el = document.querySelector("#after-transfer-flow");
-    if (!el) return;
+    const elComparison = document.querySelector("#comparison");
+    const elTransfer = document.querySelector("#after-transfer-flow");
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // 転院フローを読み終えたら（画面に入ったらではなく、通り過ぎたら）CTA表示
-        // isIntersectingがfalse かつ boundingClientRect.topが負（画面より上にある）場合
-        setShowFloatingCta(!entry.isIntersecting && entry.boundingClientRect.top < 0);
-      },
-      {
-        root: null,
-        threshold: 0,
-        rootMargin: "0px",
-      }
-    );
+    // 比較表が見えたら「小CTA」を表示
+    if (elComparison) {
+      const obsMini = new IntersectionObserver(
+        ([entry]) => setShowMiniCta(entry.isIntersecting),
+        { threshold: 0.15, rootMargin: "0px 0px -30% 0px" }
+      );
+      obsMini.observe(elComparison);
 
-    observer.observe(el);
-    return () => observer.disconnect();
+      // cleanup用に保持
+      (window as any).__obsMiniCta = obsMini;
+    }
+
+    // 転院フローを読み終える（or 見えた）タイミングで「本CTA」を表示
+    if (elTransfer) {
+      const obsMain = new IntersectionObserver(
+        ([entry]) => setShowMainCta(!entry.isIntersecting && entry.boundingClientRect.top < 0),
+        {
+          root: null,
+          threshold: 0,
+          rootMargin: "0px",
+        }
+      );
+      obsMain.observe(elTransfer);
+      (window as any).__obsMainCta = obsMain;
+    }
+
+    return () => {
+      const obsMini = (window as any).__obsMiniCta as IntersectionObserver | undefined;
+      const obsMain = (window as any).__obsMainCta as IntersectionObserver | undefined;
+      obsMini?.disconnect();
+      obsMain?.disconnect();
+      delete (window as any).__obsMiniCta;
+      delete (window as any).__obsMainCta;
+    };
   }, []);
 
   // Medical Organization Data for Structured Data (JSON-LD)
@@ -132,7 +152,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-5xl items-start justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="SAS CPAP オンラインクリニック ロゴ"
               width={64}
               height={64}
@@ -149,7 +169,7 @@ export default function Home() {
             </div>
           </div>
           <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
-            <a href="#transfer" className="hover:text-slate-900 transition-colors">
+            <a href="#transfer-flow" className="hover:text-slate-900 transition-colors">
               転院について
             </a>
             <a href="#services" className="hover:text-slate-900 transition-colors">
@@ -194,9 +214,14 @@ export default function Home() {
                 </span>
               </h1>
 
-              {/* Specialty Outpatient Tag */}
-              <div className="mt-4 inline-flex rounded-full bg-[#0B1F3A]/5 px-3 py-1 text-xs font-semibold text-[#0B1F3A]">
-                睡眠時無呼吸症候群（SAS）継続フォロー専門外来
+              {/* Health Insurance Badge */}
+              <div className="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
+                <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                  健康保険適用
+                </span>
+                <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600">
+                  CPAP継続フォロー外来
+                </span>
               </div>
 
               <ul className="mt-6 space-y-2 text-sm sm:text-base text-slate-700 text-left max-w-fit mx-auto md:mx-0">
@@ -220,7 +245,7 @@ export default function Home() {
 
               {/* Internal Links (SEO & Navigation) */}
               <div className="mt-4 hidden md:flex gap-4 text-xs font-medium text-slate-500 underline underline-offset-4">
-                 <a href="#transfer" className="hover:text-slate-800">転院の方はこちら</a>
+                 <a href="#transfer-flow" className="hover:text-slate-800">転院の方はこちら</a>
                  <a href="#faq" className="hover:text-slate-800">よくある質問</a>
               </div>
 
@@ -242,7 +267,7 @@ export default function Home() {
               
               {/* Mobile Only Link */}
               <div className="mt-3 md:hidden text-center">
-                <a href="#transfer" className="text-xs text-slate-500 underline underline-offset-4">転院の方はこちら</a>
+                <a href="#transfer-flow" className="text-xs text-slate-500 underline underline-offset-4">転院の方はこちら</a>
               </div>
 
               {/* Quantitative Info Line */}
@@ -354,7 +379,7 @@ export default function Home() {
               <div className="rounded-3xl border border-slate-200/70 bg-white shadow-md overflow-hidden">
                 <div className="relative">
                   <Image
-                    src="/online-patient.png"
+                    src="/online-patient.webp"
                     alt="オンライン診療（CPAP継続フォロー）のイメージ"
                     width={1200}
                     height={800}
@@ -379,6 +404,31 @@ export default function Home() {
                   通院負担に配慮しながら、安心して続けられるフォロー体制を整えています。
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target User Banner */}
+      <section className="bg-[#F8FAFC]">
+        <div className="mx-auto max-w-5xl px-6 py-6">
+          <div className="rounded-2xl border border-slate-200 bg-white px-5 py-4">
+            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-xs font-semibold tracking-wide text-[#0B1F3A]">
+                  現在CPAP治療中の方へ
+                </p>
+                <p className="mt-1 text-sm text-slate-600">
+                  通院の負担を減らしながら、オンライン中心でCPAP継続フォローを受けられます。
+                </p>
+              </div>
+
+              <a
+                href="#flow"
+                className="mt-3 inline-flex items-center justify-center rounded-xl border border-[#0B1F3A] px-4 py-2 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#0B1F3A] hover:text-white md:mt-0"
+              >
+                診療の流れを見る
+              </a>
             </div>
           </div>
         </div>
@@ -447,7 +497,10 @@ export default function Home() {
             </p>
 
             {/* 比較表 (New) */}
-            <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 overflow-x-auto">
+            <p className="mb-2 text-xs text-slate-400 md:hidden">
+              ← 横スクロールできます →
+            </p>
+            <div className="mt-8 relative overflow-hidden rounded-xl border border-slate-200 overflow-x-auto">
               <table className="min-w-full text-sm text-left text-slate-700">
                 <thead className="bg-slate-50 text-xs text-slate-700 font-semibold border-b border-slate-200">
                   <tr>
@@ -492,6 +545,7 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
+              <div className="pointer-events-none absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-white to-transparent md:hidden" />
             </div>
 
             {/* Eligibility Check (Integrated here) */}
@@ -610,7 +664,7 @@ export default function Home() {
       </section>
 
       {/* Quantitative Monitoring (New) */}
-      <section className="border-t border-slate-100 bg-white">
+      <section id="comparison" className="border-t border-slate-100 bg-white">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">確認する主な指標（例）</h2>
           <p className="mt-3 text-sm text-slate-700 leading-relaxed">
@@ -638,7 +692,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="transfer" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
+      <section id="transfer-flow" className="border-t border-slate-100 bg-[#F4F7FA] scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6 py-14">
           <h2 className="text-2xl font-bold text-[#0B1F3A]">CPAPの転院をご検討の方へ</h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 md:text-base">
@@ -1432,23 +1486,40 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Mobile Fixed CTA */}
-      <div className={`fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden transition-transform duration-300 ${showFloatingCta ? 'translate-y-0' : 'translate-y-full'}`}>
-        <div className="mx-auto flex max-w-md gap-3">
-          <a
-            href="#reserve"
-            className="flex-1 rounded-xl bg-[#0B1F3A]/90 backdrop-blur py-3 text-center text-sm font-semibold text-white shadow-sm"
-          >
-            継続フォロー・転院相談の予約はこちら
-          </a>
-          <a
-            href="#eligibility"
-            className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-[#0B1F3A]"
-          >
-            対象確認
-          </a>
+      {/* Mobile Fixed CTA (2-step) */}
+      {(showMiniCta || showMainCta) && (
+        <div className="fixed inset-x-0 bottom-0 z-40 md:hidden transition-all duration-300">
+          <div className="mx-auto max-w-5xl px-4 pb-4">
+            <div className="rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-sm shadow-sm">
+              <div className="flex items-center gap-3 p-3">
+                <div className="flex-1">
+                  <div className="text-xs text-slate-500">
+                    {showMainCta ? "転院のご相談もOK" : "通院が大変な方へ"}
+                  </div>
+                  <div className="text-sm font-semibold text-[#0B1F3A]">
+                    {showMainCta ? "オンラインで診療予約" : "まずは予約して相談"}
+                  </div>
+                </div>
+
+                <a
+                  href="#reserve"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#0B1F3A] px-4 py-3 text-sm font-semibold text-white shadow-sm"
+                >
+                  予約する
+                </a>
+              </div>
+
+              <div className="px-3 pb-3">
+                <div className="text-[11px] leading-relaxed text-slate-500">
+                  {showMainCta
+                    ? "現在お使いの機器を継続できる場合があります。"
+                    : "待ち時間を減らし、必要なタイミングで受診できます。"}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 }
