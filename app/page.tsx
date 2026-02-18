@@ -427,7 +427,7 @@ export default function Home() {
             </div>
 
             {/* Eligibility Check (Integrated here) */}
-            <div id="eligibility" className="mt-10 border-t border-slate-100 pt-8">
+            <div id="eligibility" className="mt-10 border-t border-slate-100 pt-8 scroll-mt-30">
               <h3 className="text-lg font-bold text-[#0B1F3A]">受診対象の確認（目安）</h3>
               <p className="mt-2 text-sm text-slate-700">
                 当院は「安定期のCPAP継続フォロー」を中心としています。
@@ -767,6 +767,56 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* H2: CPAP転院の流れ */}
+      <section id="transfer-flow" className="bg-slate-50 border-y border-slate-100">
+        <div className="mx-auto max-w-5xl px-6 py-14">
+          <h2 className="text-2xl font-semibold text-[#0B1F3A]">
+            CPAP転院の流れ
+          </h2>
+
+          <p className="mt-3 text-slate-600 leading-relaxed">
+            現在CPAP治療中の方も、オンラインでスムーズに転院できます。
+            面倒な手続きはできる限り当院と提携業者がサポートします。
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-4">
+
+            <div className="rounded-xl bg-white p-5 border border-slate-200">
+              <div className="text-sm font-semibold text-[#0B1F3A]">STEP 1</div>
+              <p className="mt-2 text-sm text-slate-700">
+                LPからオンライン予約。現在の機器やマスクが分かればご入力ください。
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-white p-5 border border-slate-200">
+              <div className="text-sm font-semibold text-[#0B1F3A]">STEP 2</div>
+              <p className="mt-2 text-sm text-slate-700">
+                医師がオンラインで診察。設定や使用状況を確認します。
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-white p-5 border border-slate-200">
+              <div className="text-sm font-semibold text-[#0B1F3A]">STEP 3</div>
+              <p className="mt-2 text-sm text-slate-700">
+                新しい機器がご自宅へ届きます。箱に返送用伝票が同封されています。
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-white p-5 border border-slate-200">
+              <div className="text-sm font-semibold text-[#0B1F3A]">STEP 4</div>
+              <p className="mt-2 text-sm text-slate-700">
+                これまでの機器を箱に入れて返送するだけで手続き完了です。
+              </p>
+            </div>
+
+          </div>
+
+          <p className="mt-6 text-xs text-slate-500">
+            ※機器の種類や契約状況により対応方法が異なる場合があります。
+          </p>
         </div>
       </section>
 
